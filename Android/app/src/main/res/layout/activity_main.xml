@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/text_one"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="100dp"
         android:text="@string/content"
         android:textSize="50sp"
         android:textStyle="bold"
@@ -21,6 +21,21 @@
 
 
         ></TextView>
+
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:onClick="clickOnButton"
+        android:background="@color/red"
+        android:text="这事一个按钮"
+        >
+
+
+
+    </Button>
 
 
 
