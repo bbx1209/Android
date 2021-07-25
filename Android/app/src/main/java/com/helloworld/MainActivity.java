@@ -27,4 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
         Log.e(TAG,"clickOnButton: 点击了按钮");
     }
+
+    public void jumpAction(View view) {
+
+
+    }
 }

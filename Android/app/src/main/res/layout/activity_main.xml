@@ -37,6 +37,18 @@
 
     </Button>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:onClick="jumpAction"
+        android:background="@color/red"
+        android:text="跳转至另一个页面"
+        >
+
+
+
+    </Button>
+
 
 
 
