@@ -2,6 +2,7 @@ package com.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void jumpAction(View view) {
 
-
+    startActivity(new Intent(this , MainActivity2.class));
     }
 }
