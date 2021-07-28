@@ -26,6 +26,6 @@ public class MainActivity2 extends AppCompatActivity {
 
     public void jumpToNewActitvity(View view) {
 
-
+    onBackPressed();
     }
 }
