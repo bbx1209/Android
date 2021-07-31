@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -27,5 +28,13 @@ public class MainActivity2 extends AppCompatActivity {
     public void jumpToNewActitvity(View view) {
 
     onBackPressed();
+    }
+
+    public void loginAction(View view) {
+
+       EditText textView = findViewById(R.id.textView);
+
+        Log.e(TAG, textView.getText().toString());
+
     }
 }
