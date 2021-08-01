@@ -31,6 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void jumpAction(View view) {
 
-    startActivity(new Intent(this , MainActivity2.class));
+    startActivity(new Intent(this , ListViewActivity.class));
     }
 }
