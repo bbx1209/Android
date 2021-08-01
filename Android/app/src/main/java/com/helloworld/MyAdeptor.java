@@ -37,16 +37,26 @@ public class MyAdeptor extends BaseAdapter  {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
-        if (convertView == null){
+        ViewHolder viewHolder;
+        if (convertView == null) {
+            viewHolder = new ViewHolder();
             convertView = LayoutInflater.from(context).inflate(R.layout.item_view, parent, false);
+            viewHolder.textView = convertView.findViewById(R.id.item);
+            convertView.setTag(viewHolder);
 
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
         }
-        TextView textView = convertView.findViewById(R.id.item);
-        textView.setText(data.get(position).getName());
 
-        Log.e("", "item "+ position);
+        viewHolder.textView.setText(data.get(position).getName());
+
+        Log.e("", "item " + position);
 
         return convertView;
+    }
+
+
+    private final class ViewHolder {
+        TextView textView;
     }
 }
