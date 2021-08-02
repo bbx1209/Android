@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     public void clickOnButton(View view) {
 
         Log.e(TAG,"clickOnButton: 点击了按钮");
+
+        startActivity(new Intent(this, MainActivity2.class));
     }
 
     public void jumpAction(View view) {

@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -35,6 +36,15 @@ public class MainActivity2 extends AppCompatActivity {
        EditText textView = findViewById(R.id.textView);
 
         Log.e(TAG, textView.getText().toString());
+
+    }
+
+    public void loginActionII(View view) {
+
+       Button button = findViewById(R.id.secondBut);
+
+       button.setText("第二个button");
+
 
     }
 }
