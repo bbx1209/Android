@@ -47,6 +47,14 @@
         android:onClick="loginActionII" />
 
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:src="@drawable/image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        android:scaleType="centerInside"></ImageView>
+
 
 
 
