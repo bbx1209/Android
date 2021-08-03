@@ -35,4 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
     startActivity(new Intent(this , ListViewActivity.class));
     }
+
+    public void toNotifaction(View view) {
+
+
+    }
 }
