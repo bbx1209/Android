@@ -38,6 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void toNotifaction(View view) {
 
-
+        startActivity(new Intent(this , Notifaction.class));
     }
 }
