@@ -5,12 +5,9 @@ buildscript {
         jcenter()
     }
     dependencies {
-<<<<<<< HEAD
         classpath 'com.android.tools.build:gradle:4.2.2'
-=======
-        classpath "com.android.tools.build:gradle:4.1.3"
 //        implementation "com.android.support:support-compat:28.0.0"
->>>>>>> af01b217f65620fec735915a00eedf7e612ca44b
+
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
