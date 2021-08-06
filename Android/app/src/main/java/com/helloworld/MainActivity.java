@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity" ;
 
+    public   static  final  String paramKey = "paramKey";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void toNotifaction(View view) {
 
-        startActivity(new Intent(this , Notifaction.class));
+        Intent intent = new Intent(this, Notifaction.class);
+
+        intent.putExtra(paramKey, "这是传过去的字符串");
+        startActivity(intent);
     }
 }

@@ -6,8 +6,10 @@ import androidx.core.app.NotificationCompat;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class Notifaction extends AppCompatActivity {
@@ -19,6 +21,11 @@ public class Notifaction extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifaction);
+
+        Intent intent = getIntent();
+
+        String value = intent.getStringExtra(MainActivity.paramKey);
+        Log.e("Notifiction", "onCreate: "+ value);
 
         manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
