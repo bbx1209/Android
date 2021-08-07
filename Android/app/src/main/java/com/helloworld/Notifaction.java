@@ -47,31 +47,37 @@ public class Notifaction extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        Log.e("Notification", "onStart:" );
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
+        Log.e("Notification", "onRestart: " );
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        Log.e("Notification", "onResume: " );
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        Log.e("Notification", "onPause: " );
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        Log.e("Notification", "onStop: " );
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        Log.e("Notification", "onDestroy: " );
     }
 
     public void sendNotifaction(View view) {
