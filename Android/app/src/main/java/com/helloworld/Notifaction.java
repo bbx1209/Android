@@ -12,6 +12,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+
+/*
+
+ activity 声明周期
+ 
+ 1。 进入页面先调用 ， onCreate
+ 2. 调 onStart
+ 3. 调 onResume  渲染界面
+ 4， 如果进入后台，app 没有被杀死， 会调 onPause, 和 onStop
+ 5, 再次唤醒后台app 会调 onRestart , onStart, 和 onResume
+ 6, 返回上个页面跟 4一样，只不过最后会调 onDestroy 销毁页面，回收内存
+
+ */
+
 public class Notifaction extends AppCompatActivity {
 
     private NotificationManager manager;
