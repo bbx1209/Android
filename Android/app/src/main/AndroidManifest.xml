@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
-        <activity android:name=".Notifaction"></activity>
+        <activity android:name=".Notifaction"
+            android:parentActivityName=".MainActivity"
+            ></activity>
         <activity android:name=".ListViewActivity" />
         <activity
             android:name=".MainActivity2"

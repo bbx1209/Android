@@ -44,6 +44,36 @@ public class Notifaction extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
     public void sendNotifaction(View view) {
 
         manager.notify(1, notifaction);
@@ -53,4 +83,11 @@ public class Notifaction extends AppCompatActivity {
 
         manager.cancel(1);
     }
+
+
+
+
+
+
+
 }
