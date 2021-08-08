@@ -28,12 +28,12 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void jumpToNewActitvity(View view) {
-        Intent intent = new Intent();
-        intent.putExtra("content", "second activity's param");
-        setResult(Activity.RESULT_OK, intent);
+//        Intent intent = new Intent();
+//        intent.putExtra("content", "second activity's param");
+//        setResult(Activity.RESULT_OK, intent);
 
-//        onBackPressed();
-        finish();
+        onBackPressed();
+//        finish();
     }
 
     public void loginAction(View view) {
