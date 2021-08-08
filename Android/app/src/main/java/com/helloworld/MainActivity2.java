@@ -1,6 +1,7 @@
 package com.helloworld;
 
 import android.content.Intent;
+import android.graphics.Outline;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -11,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.util.Log;
 import android.view.View;
+import android.view.ViewOutlineProvider;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -24,6 +26,17 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         Log.e(TAG, "onCreate: 进入新的页面了");
+
+        View imageView = findViewById(R.id.imageView);
+
+        imageView.setOutlineProvider(new ViewOutlineProvider() {
+            @Override
+            public void getOutline(View view, Outline outline) {
+                outline.setRoundRect(0,0,imageView.getWidth(),imageView.getHeight(), 50);
+            }
+        });
+        imageView.setClipToOutline(true);
+
 
     }
 
