@@ -1,5 +1,6 @@
 package com.helloworld;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -26,11 +27,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == Activity.RESULT_OK){
+            String result = data.getStringExtra("content");
+            Log.e(TAG, "onActivityResult: " + result );
+        }
+    }
+
     public void clickOnButton(View view) {
 
-        Log.e(TAG,"clickOnButton: 点击了按钮");
+        Log.e(TAG, "clickOnButton: 点击了按钮");
 
-        startActivity(new Intent(this, MainActivity2.class));
+        Intent intent = new Intent(this, MainActivity2.class);
+
+        startActivityForResult(intent, 200);
+
+        startActivity(intent);
     }
 
     public void jumpAction(View view) {

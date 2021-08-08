@@ -16,7 +16,7 @@ import android.view.View;
 /*
 
  activity 声明周期
- 
+
  1。 进入页面先调用 ， onCreate
  2. 调 onStart
  3. 调 onResume  渲染界面
