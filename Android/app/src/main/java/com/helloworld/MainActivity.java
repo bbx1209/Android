@@ -1,5 +1,6 @@
 package com.helloworld;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity" ;
 
+    public   static  final  String paramKey = "paramKey";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,11 +27,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == Activity.RESULT_OK){
+            String result = data.getStringExtra("content");
+            Log.e(TAG, "onActivityResult: " + result );
+        }
+    }
+
     public void clickOnButton(View view) {
 
-        Log.e(TAG,"clickOnButton: 点击了按钮");
+        Log.e(TAG, "clickOnButton: 点击了按钮");
 
-        startActivity(new Intent(this, MainActivity2.class));
+        Intent intent = new Intent(this, MainActivity2.class);
+
+        startActivityForResult(intent, 200);
+
+        startActivity(intent);
     }
 
     public void jumpAction(View view) {
@@ -38,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void toNotifaction(View view) {
 
-        startActivity(new Intent(this , Notifaction.class));
+        Intent intent = new Intent(this, Notifaction.class);
+
+        intent.putExtra(paramKey, "这是传过去的字符串");
+        startActivity(intent);
     }
 }
