@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toOkHttp(View view) {
-
+        Intent intent = new Intent(this, OKHttpActivity.class);
+        startActivity(intent);
 
     }
 }
