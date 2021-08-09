@@ -2,6 +2,7 @@ package com.helloworld;
 
 import android.content.Intent;
 import android.graphics.Outline;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,13 +30,15 @@ public class MainActivity2 extends AppCompatActivity {
 
         View imageView = findViewById(R.id.imageView);
 
-        imageView.setOutlineProvider(new ViewOutlineProvider() {
-            @Override
-            public void getOutline(View view, Outline outline) {
-                outline.setRoundRect(0,0,imageView.getWidth(),imageView.getHeight(), 50);
-            }
-        });
-        imageView.setClipToOutline(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            imageView.setOutlineProvider(new ViewOutlineProvider() {
+                @Override
+                public void getOutline(View view, Outline outline) {
+                    outline.setRoundRect(0, 0, imageView.getWidth(), imageView.getHeight(), 50);
+                }
+            });
+            imageView.setClipToOutline(true);
+        }
 
 
     }
