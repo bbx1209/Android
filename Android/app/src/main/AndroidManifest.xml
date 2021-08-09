@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.helloworld">
+     <!--- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -9,9 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
-        <activity android:name=".Notifaction"
-            android:parentActivityName=".MainActivity"
-            ></activity>
+        <activity
+            android:name=".OKHttpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Notifaction"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".ListViewActivity" />
         <activity
             android:name=".MainActivity2"

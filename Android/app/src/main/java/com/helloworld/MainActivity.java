@@ -60,4 +60,9 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(paramKey, "这是传过去的字符串");
         startActivity(intent);
     }
+
+    public void toOkHttp(View view) {
+
+
+    }
 }
