@@ -19,13 +19,14 @@ import okhttp3.Response;
 
 public class OKHttpActivity extends AppCompatActivity {
 
-    private    OkHttpClient httpClinet;
+    private OkHttpClient httpClinet;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_okhttp);
 
-         httpClinet = new OkHttpClient();
+        httpClinet = new OkHttpClient();
 
 
     }
@@ -65,32 +66,32 @@ public class OKHttpActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
-                    Log.e("getASync", "onResponse: " + response.body().string() );
+                    Log.e("getASync", "getASync: " + response.body().string());
                 }
             }
         });
 
 
-
     }
 
     public void postSync(View view) {
-       new  Thread(){
-           @Override
-           public void run() {
-               FormBody body = new FormBody.Builder().add("a", "1").add("b", "2").build();
-               Request request = new Request.Builder().url("https://httpbin.org/post").post(body).build();
+        new Thread() {
+            @Override
+            public void run() {
+                FormBody body = new FormBody.Builder().add("a", "1").add("b", "2").build();
+                Request request = new Request.Builder().url("https://httpbin.org/post").post(body).build();
 
-               Call call = httpClinet.newCall(request);
+                Call call = httpClinet.newCall(request);
 
-               try {
-                   Response execute = call.execute();
-                   Log.e("postSync request", "getSync: " + execute.body().string());
-               } catch (IOException e) {
-                   e.printStackTrace();
-               }
-           }
-       }.start();
+                try {
+                    Response execute = call.execute();
+                    Log.e("postSync request", "postSync: " + execute.body().string());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
+
 
     }
 
@@ -108,7 +109,7 @@ public class OKHttpActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
-                    Log.e("postASync", "onResponse: " + response.body().string() );
+                    Log.e("postASync", "postASync: " + response.body().string());
                 }
             }
         });
