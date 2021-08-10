@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<LinearLayout android:layout_height="match_parent"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
 
     android:layout_width="match_parent"
     android:orientation="vertical"
@@ -27,7 +28,7 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:onClick="clickOnButton"
         android:background="@color/red"
         android:text="go to View test activity"
@@ -39,7 +40,7 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:onClick="jumpAction"
         android:background="@color/red"
         android:text="跳转至列表页"
@@ -51,7 +52,7 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:onClick="toNotifaction"
         android:background="@color/red"
         android:text="去通知页面"
@@ -60,14 +61,14 @@
 
 
     </Button>
+
     <Button
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:onClick="toOkHttp"
+        android:layout_height="48dp"
         android:background="@color/red"
+        android:onClick="toOkHttp"
         android:text="okhttp"
-        >
-
+        android:textSize="13sp">
 
 
     </Button>
