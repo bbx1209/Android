@@ -109,6 +109,10 @@ public class OKHttpActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
+
+                    String result = response.body().string();
+                    //解析json
+
                     Log.e("postASync", "postASync: " + response.body().string());
                 }
             }
