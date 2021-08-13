@@ -8,6 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.textclassifier.TextLinks;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -112,8 +115,12 @@ public class OKHttpActivity extends AppCompatActivity {
 
                     String result = response.body().string();
                     //解析json
+                    JSONObject body = JSON.parseObject(result);
+                    String formString = body.getString("form");
+                    JSONObject formObj = JSON.parseObject(formString);
+                    String form = formObj.getString("a");
 
-                    Log.e("postASync", "postASync: " + response.body().string());
+                    Log.e("postASync", " " + form);
                 }
             }
         });
