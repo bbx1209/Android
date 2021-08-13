@@ -99,7 +99,7 @@ public class OKHttpActivity extends AppCompatActivity {
     }
 
     public void postASync(View view) {
-        FormBody body = new FormBody.Builder().add("a", "1").add("b", "2").build();
+        FormBody body = new FormBody.Builder().add("name", "1").add("age", "2").build();
         Request request = new Request.Builder().url("https://httpbin.org/post").post(body).build();
 
         Call call = httpClinet.newCall(request);
@@ -117,10 +117,9 @@ public class OKHttpActivity extends AppCompatActivity {
                     //解析json
                     JSONObject body = JSON.parseObject(result);
                     String formString = body.getString("form");
-                    JSONObject formObj = JSON.parseObject(formString);
-                    String form = formObj.getString("a");
+                    Person person = JSONObject.parseObject(formString, Person.class);
 
-                    Log.e("postASync", " " + form);
+                    Log.e("postASync", " " + person.name +"\n"+ person.age);
                 }
             }
         });
