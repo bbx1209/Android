@@ -14,21 +14,29 @@
         <activity
             android:name=".BaseActivity.BaseActivity"
             android:exported="true" />
-        <activity
-            android:name=".Base.BaseActivity"
-            android:exported="true" />
+
+        <activity android:name=".Sections.Collection.Activity.CollectionActivity"
+            android:exported="true"/>
+
         <activity
             android:name=".OKHttpActivity"
             android:exported="true" />
+
         <activity
             android:name=".Notifaction"
             android:parentActivityName=".MainActivity" />
+
         <activity android:name=".ListViewActivity" />
+
         <activity
             android:name=".MainActivity2"
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme.HelloWorld.NoActionBar" />
-        <activity android:name=".MainActivity">
+
+<!--        <activity android:name=".Sections.Home.Activity.HomeActivity"-->
+<!--            android:exported="true"/>-->
+
+        <activity android:name=".Sections.Home.Activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
