@@ -35,12 +35,8 @@ public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  
 
     }
 
-    public HomeAdapter(List<ActivityModel> itemList) {
-        this.itemList = itemList;
-    }
-
     @NonNull
-    @Overridegit
+    @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_home_item, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
