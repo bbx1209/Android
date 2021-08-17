@@ -30,9 +30,13 @@ public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  
         @SuppressLint("ResourceType")
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(homeitem);
+            textView = (TextView) itemView.findViewById(R.id.homeitem);
         }
 
+    }
+
+    public HomeAdapter(List<ActivityModel> itemList) {
+        this.itemList = itemList;
     }
 
     @NonNull
@@ -46,7 +50,7 @@ public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ActivityModel model = itemList.get(position);
-        holder.textView.setText(model.mainTitle);
+        holder.textView.setText(model.getMainTitle());
     }
 
     @Override

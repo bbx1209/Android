@@ -17,4 +17,17 @@ public class ActivityModel {
         this.mainTitle = mainTitle;
         this.params = params;
     }
+
+
+    public String getActivityName() {
+        return activityName;
+    }
+
+    public String getMainTitle() {
+        return mainTitle;
+    }
+
+    public Params getParams() {
+        return params;
+    }
 }
