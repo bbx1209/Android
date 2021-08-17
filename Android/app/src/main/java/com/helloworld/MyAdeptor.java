@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+
 public class MyAdeptor extends BaseAdapter  {
 
     private List<Bean> data;
