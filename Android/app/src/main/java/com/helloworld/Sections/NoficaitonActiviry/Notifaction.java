@@ -1,4 +1,4 @@
-package com.helloworld;
+package com.helloworld.Sections.NoficaitonActiviry;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
@@ -11,6 +11,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import com.helloworld.MainActivity;
+import com.helloworld.R;
 
 
 /*

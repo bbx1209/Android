@@ -19,14 +19,14 @@
             android:exported="true"/>
 
         <activity
-            android:name=".OKHttpActivity"
+            android:name=".Sections.OKHttp.OKHttpActivity"
             android:exported="true" />
 
         <activity
-            android:name=".Notifaction"
+            android:name=".Sections.NoficaitonActiviry.Notifaction"
             android:exported="true" />
 
-        <activity android:name=".ListViewActivity" />
+        <activity android:name=".Sections.ListView.ListViewActivity" />
 
         <activity
             android:name=".MainActivity2"

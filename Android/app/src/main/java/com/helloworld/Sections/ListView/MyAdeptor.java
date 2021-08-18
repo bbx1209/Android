@@ -1,4 +1,4 @@
-package com.helloworld;
+package com.helloworld.Sections.ListView;
 
 import android.content.Context;
 import android.util.Log;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.helloworld.Sections.ListView.Models.Bean;
+import com.helloworld.R;
 
 import java.util.List;
 

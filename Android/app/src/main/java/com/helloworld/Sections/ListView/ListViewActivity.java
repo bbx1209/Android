@@ -1,4 +1,4 @@
-package com.helloworld;
+package com.helloworld.Sections.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.helloworld.Sections.ListView.Models.Bean;
+import com.helloworld.R;
 
 import java.util.ArrayList;
 import java.util.List;

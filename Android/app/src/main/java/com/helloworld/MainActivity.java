@@ -9,6 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.helloworld.Sections.ListView.ListViewActivity;
+import com.helloworld.Sections.NoficaitonActiviry.Notifaction;
+import com.helloworld.Sections.OKHttp.OKHttpActivity;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -31,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == Activity.RESULT_OK){
-            String result = data.getStringExtra("content");
-            Log.e(TAG, "onActivityResult: " + result );
-        }
+//        if (resultCode == Activity.RESULT_OK){
+//            String result = data.getStringExtra("content");
+//            Log.e(TAG, "onActivityResult: " + result );
+//        }
     }
 
     public void clickOnButton(View view) {

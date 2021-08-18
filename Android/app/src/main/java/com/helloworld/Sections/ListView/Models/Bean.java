@@ -1,4 +1,4 @@
-package com.helloworld;
+package com.helloworld.Sections.ListView.Models;
 
 public class Bean {
 
