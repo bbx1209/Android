@@ -1,5 +1,6 @@
 package com.helloworld.Sections.Home.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.helloworld.BaseActivity.BaseActivity;
 
 import com.helloworld.BaseModel.ActivityModel;
 import com.helloworld.Handler.HomeDataHandler;
+import com.helloworld.MainActivity;
 import com.helloworld.R;
 import com.helloworld.Sections.Home.Model.HomeAdapter;
 
@@ -42,7 +44,11 @@ public class HomeActivity extends BaseActivity implements HomeAdapter.HomeAdapte
 
 
     @Override
-    public void clickListener(View view, String activityName) {
-        Log.e("Home activity", "clickListener: "+ activityName );
+    public void clickListener(View view, ActivityModel model) {
+
+        Intent intent = new Intent(this, model.aclass);
+//        intent.setClassName(null, activityName);
+//        intent.setClassName(view.getContext(), activityName);
+        startActivity(intent);
     }
 }

@@ -24,7 +24,7 @@
 
         <activity
             android:name=".Notifaction"
-            android:parentActivityName=".MainActivity" />
+            android:exported="true" />
 
         <activity android:name=".ListViewActivity" />
 

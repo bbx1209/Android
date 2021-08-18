@@ -29,7 +29,7 @@ public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  
     private  HomeAdapterListener listener;
 
     public interface HomeAdapterListener {
-        public  void  clickListener(View view,String activityName);
+        public  void  clickListener(View view, ActivityModel model);
     }
 
     static  class  ViewHolder extends  RecyclerView.ViewHolder {
@@ -62,12 +62,18 @@ public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("+++++++ ", "onClick:" );
+                Log.e("+++++++ ", "onClick:");
                 String name = viewHolder.textView.getText().toString();
-                Toast.makeText(view.getContext (),name,Toast.LENGTH_SHORT).show();
-                listener.clickListener(v,name);
+                Toast.makeText(view.getContext(), name, Toast.LENGTH_SHORT).show();
+
+                int adapterPosition = viewHolder.getAdapterPosition();
+                ActivityModel model = itemList.get(adapterPosition);
+                listener.clickListener(v, model);
             }
         });
+
+
+
 
         return viewHolder;
     }
@@ -75,7 +81,10 @@ public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ActivityModel model = itemList.get(position);
+
         holder.textView.setText(model.getMainTitle());
+        Log.e("+++++++ ", "onBindViewHolder:");
+
     }
 
     @Override
