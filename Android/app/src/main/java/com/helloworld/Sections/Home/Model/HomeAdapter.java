@@ -3,10 +3,13 @@ package com.helloworld.Sections.Home.Model;
 import static com.helloworld.R.id.homeitem;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,9 +22,15 @@ import com.helloworld.Sections.Home.View.HomeItem;
 import java.util.List;
 
 
+
 public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  {
 
     private List<ActivityModel> itemList;
+    private  HomeAdapterListener listener;
+
+    public interface HomeAdapterListener {
+        public  void  clickListener(View view,String activityName);
+    }
 
     static  class  ViewHolder extends  RecyclerView.ViewHolder {
 
@@ -39,11 +48,27 @@ public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  
         this.itemList = itemList;
     }
 
+    public HomeAdapter(List<ActivityModel> itemList, HomeAdapterListener listener) {
+        this.itemList = itemList;
+        this.listener = listener;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_home_item, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("+++++++ ", "onClick:" );
+                String name = viewHolder.textView.getText().toString();
+                Toast.makeText(view.getContext (),name,Toast.LENGTH_SHORT).show();
+                listener.clickListener(v,name);
+            }
+        });
+
         return viewHolder;
     }
 
@@ -57,4 +82,6 @@ public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  
     public int getItemCount() {
         return itemList.size();
     }
+
+
 }

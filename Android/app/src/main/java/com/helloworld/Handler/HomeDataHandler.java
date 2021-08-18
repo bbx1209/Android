@@ -10,7 +10,7 @@ public class HomeDataHandler {
     public List<ActivityModel> homeList() {
         List<ActivityModel> list = new ArrayList<>();
 
-        ActivityModel model1 = new ActivityModel("activityname", "show name", null);
+        ActivityModel model1 = new ActivityModel("Notifaction", "通知", null);
         list.add(model1);
 
         return list;

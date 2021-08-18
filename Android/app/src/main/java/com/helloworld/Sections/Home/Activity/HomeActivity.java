@@ -17,7 +17,7 @@ import com.helloworld.Sections.Home.Model.HomeAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends BaseActivity implements HomeAdapter.HomeAdapterListener {
 
     private HomeDataHandler homeDataHandler;
     private List<ActivityModel> list = new ArrayList<>();
@@ -34,9 +34,15 @@ public class HomeActivity extends BaseActivity {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-        HomeAdapter homeAdapter = new HomeAdapter(list);
+        HomeAdapter homeAdapter = new HomeAdapter(list, this);
         recyclerView.setAdapter(homeAdapter);
 
 
+    }
+
+
+    @Override
+    public void clickListener(View view, String activityName) {
+        Log.e("Home activity", "clickListener: "+ activityName );
     }
 }
