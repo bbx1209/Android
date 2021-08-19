@@ -12,30 +12,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity
+            android:name=".Sections.PassParam.PassParam"
+            android:exported="true" />
+        <activity
             android:name=".BaseActivity.BaseActivity"
             android:exported="true" />
-
-        <activity android:name=".Sections.Collection.Activity.CollectionActivity"
-            android:exported="true"/>
-
+        <activity
+            android:name=".Sections.Collection.Activity.CollectionActivity"
+            android:exported="true" />
         <activity
             android:name=".Sections.OKHttp.OKHttpActivity"
             android:exported="true" />
-
         <activity
             android:name=".Sections.NoficaitonActiviry.Notifaction"
             android:exported="true" />
-
         <activity android:name=".Sections.ListView.ListViewActivity" />
-
         <activity
             android:name=".MainActivity2"
             android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.HelloWorld.NoActionBar" />
-
-<!--        <activity android:name=".Sections.Home.Activity.HomeActivity"-->
-<!--            android:exported="true"/>-->
-
+            android:theme="@style/Theme.HelloWorld.NoActionBar" /> <!-- <activity android:name=".Sections.Home.Activity.HomeActivity" -->
+        <!-- android:exported="true"/> -->
         <activity android:name=".Sections.Home.Activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
