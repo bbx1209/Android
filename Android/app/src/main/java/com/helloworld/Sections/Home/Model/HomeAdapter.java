@@ -44,9 +44,6 @@ public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  
 
     }
 
-    public HomeAdapter(List<ActivityModel> itemList) {
-        this.itemList = itemList;
-    }
 
     public HomeAdapter(List<ActivityModel> itemList, HomeAdapterListener listener) {
         this.itemList = itemList;
@@ -89,7 +86,9 @@ public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  
 
     @Override
     public int getItemCount() {
-        return itemList.size();
+        int count = itemList.size();
+        Log.e("adaptor", "getItemCount:"+ count );
+        return count;
     }
 
 

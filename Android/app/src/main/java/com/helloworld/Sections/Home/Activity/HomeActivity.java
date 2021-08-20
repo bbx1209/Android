@@ -35,6 +35,7 @@ public class HomeActivity extends BaseActivity implements HomeAdapter.HomeAdapte
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         HomeAdapter homeAdapter = new HomeAdapter(list, this);
         recyclerView.setAdapter(homeAdapter);
