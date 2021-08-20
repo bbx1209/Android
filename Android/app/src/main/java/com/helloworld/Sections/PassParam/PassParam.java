@@ -2,7 +2,9 @@ package com.helloworld.Sections.PassParam;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.helloworld.R;
 
@@ -13,5 +15,13 @@ public class PassParam extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pass_param);
+    }
+
+    public void ClickPushToNextActvity(View view) {
+
+        Intent intent = new Intent(this, PassParamSecActivity.class);
+        intent.putExtra("key", "vaule");
+        startActivity(intent);
+
     }
 }
