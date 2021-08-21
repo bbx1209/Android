@@ -1,5 +1,6 @@
 package com.helloworld.Sections.PassParam;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,6 +23,13 @@ public class PassParam extends AppCompatActivity {
         Intent intent = new Intent(this, PassParamSecActivity.class);
         intent.putExtra("key", "vaule");
         startActivity(intent);
+
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
     }
 }
