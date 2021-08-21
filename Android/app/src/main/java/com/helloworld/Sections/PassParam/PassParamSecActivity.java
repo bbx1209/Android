@@ -23,7 +23,10 @@ public class PassParamSecActivity extends AppCompatActivity {
 
     public void passValueBack(View view) {
 
-        onBackPressed();
+        Intent intent = new Intent();
+        intent.putExtra("key", "second");
+        setResult(1, intent);
+        finish();
 
     }
 }
