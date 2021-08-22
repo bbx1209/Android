@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity
+            android:name=".Sections.UIElementActivity.UIElementActivity"
+            android:exported="true" />
+        <activity
             android:name=".Sections.PassParam.PassParamSecActivity"
             android:exported="true" />
         <activity
