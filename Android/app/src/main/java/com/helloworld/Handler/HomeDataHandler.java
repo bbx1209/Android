@@ -1,6 +1,8 @@
 package com.helloworld.Handler;
 
 import com.helloworld.BaseModel.ActivityModel;
+import com.helloworld.BaseModel.Params;
+import com.helloworld.Sections.Dialog.DialogActivity;
 import com.helloworld.Sections.NoficaitonActiviry.Notifaction;
 import com.helloworld.Sections.ListView.ListViewActivity;
 import com.helloworld.Sections.PassParam.PassParam;
@@ -12,8 +14,9 @@ import java.util.List;
 
 public class HomeDataHandler {
 
+    final List<ActivityModel> list = new ArrayList<>();
+
     public List<ActivityModel> homeList() {
-        List<ActivityModel> list = new ArrayList<>();
 
         ActivityModel model1 = new ActivityModel(Notifaction.class, "通知", null);
         list.add(model1);
@@ -25,9 +28,15 @@ public class HomeDataHandler {
         list.add(model4);
         ActivityModel model5 = new ActivityModel(PopWindowActivity.class, "PopWindow", null);
         list.add(model5);
+        addItemToList(DialogActivity.class, "dialog", null);
 
         return list;
     }
+
+     void  addItemToList(Class aclass , String title, Params param) {
+         ActivityModel model = new ActivityModel(aclass, title ,param);
+         list.add(model);
+     }
 
 
 }
