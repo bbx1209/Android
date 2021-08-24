@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity
+            android:name=".Sections.ViewPager.ViewPagerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Sections.Dialog.DialogActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Sections.Popwindow.PopWindowActivity"
+            android:exported="true" />
+        <activity
             android:name=".Sections.UIElementActivity.UIElementActivity"
             android:exported="true" />
         <activity
