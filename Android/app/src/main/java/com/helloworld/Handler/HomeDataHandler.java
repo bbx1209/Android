@@ -4,6 +4,7 @@ import com.helloworld.BaseModel.ActivityModel;
 import com.helloworld.Sections.NoficaitonActiviry.Notifaction;
 import com.helloworld.Sections.ListView.ListViewActivity;
 import com.helloworld.Sections.PassParam.PassParam;
+import com.helloworld.Sections.Popwindow.PopWindowActivity;
 import com.helloworld.Sections.UIElementActivity.UIElementActivity;
 
 import java.util.ArrayList;
@@ -22,6 +23,8 @@ public class HomeDataHandler {
         list.add(model3);
         ActivityModel model4 = new ActivityModel(UIElementActivity.class, "UI元素", null);
         list.add(model4);
+        ActivityModel model5 = new ActivityModel(PopWindowActivity.class, "PopWindow", null);
+        list.add(model5);
 
         return list;
     }
