@@ -56,7 +56,7 @@ public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_home_item, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
 
-        view.setOnClickListener(new View.OnClickListener() {git
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.e("+++++++ ", "onClick:");
