@@ -18,6 +18,7 @@
         <entry key="app/src/main/res/layout/activity_pass_param_sec.xml" value="0.15217391304347827" />
         <entry key="app/src/main/res/layout/activity_pop_window.xml" value="0.23052536231884058" />
         <entry key="app/src/main/res/layout/activity_uielement.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_view_pager.xml" value="0.29528985507246375" />
         <entry key="app/src/main/res/layout/collection.xml" value="0.16983695652173914" />
         <entry key="app/src/main/res/layout/dailog_view.xml" value="0.23052536231884058" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.192481884057971" />
@@ -27,6 +28,9 @@
         <entry key="app/src/main/res/layout/home_layout.xml" value="0.15806159420289856" />
         <entry key="app/src/main/res/layout/item_view.xml" value="0.2033514492753623" />
         <entry key="app/src/main/res/layout/pop_content_viiew.xml" value="0.23052536231884058" />
+        <entry key="app/src/main/res/layout/viewpage_view1.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/viewpage_view2.xml" value="0.29528985507246375" />
+        <entry key="app/src/main/res/layout/viewpage_view3.xml" value="0.29528985507246375" />
       </map>
     </option>
   </component>

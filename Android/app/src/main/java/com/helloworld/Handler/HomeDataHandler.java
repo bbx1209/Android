@@ -8,6 +8,7 @@ import com.helloworld.Sections.ListView.ListViewActivity;
 import com.helloworld.Sections.PassParam.PassParam;
 import com.helloworld.Sections.Popwindow.PopWindowActivity;
 import com.helloworld.Sections.UIElementActivity.UIElementActivity;
+import com.helloworld.Sections.ViewPager.ViewPagerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ public class HomeDataHandler {
         ActivityModel model5 = new ActivityModel(PopWindowActivity.class, "PopWindow", null);
         list.add(model5);
         addItemToList(DialogActivity.class, "dialog", null);
+        addItemToList(ViewPagerActivity.class, "view pager", null);
 
         return list;
     }
