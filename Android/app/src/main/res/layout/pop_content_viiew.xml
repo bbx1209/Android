@@ -10,7 +10,7 @@
         android:id="@+id/but1"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="5dp"
         android:text="第一个按钮"
         ></Button>
 
@@ -18,7 +18,7 @@
         android:id="@+id/but2"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="5dp"
         android:text="第二个按钮"
         ></Button>
 

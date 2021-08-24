@@ -31,7 +31,7 @@ public class PopWindowActivity extends AppCompatActivity {
         Button button2 = contentView.findViewById(R.id.but2);
 
 
-        PopupWindow popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.MATCH_PARENT, 300, true);
+        PopupWindow popupWindow = new PopupWindow(contentView, 450, 500, true);
 
         popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.image));
 
@@ -42,12 +42,14 @@ public class PopWindowActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.e(TAG, "onClick:第一个按钮");
+                popupWindow.dismiss();
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.e(TAG, "onClick:第二个按钮");
+                popupWindow.dismiss();
             }
         });
 
