@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.helloworld.BaseActivity.BaseActivity;
 import com.helloworld.MainActivity;
 import com.helloworld.R;
 
@@ -29,7 +30,7 @@ import com.helloworld.R;
 
  */
 
-public class Notifaction extends AppCompatActivity {
+public class Notifaction extends BaseActivity {
 
     private NotificationManager manager;
     private  Notification notifaction;
