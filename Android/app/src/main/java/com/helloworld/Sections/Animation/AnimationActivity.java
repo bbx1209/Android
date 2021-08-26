@@ -2,9 +2,13 @@ package com.helloworld.Sections.Animation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -31,6 +35,25 @@ public class AnimationActivity extends AppCompatActivity {
 
 
         _imageView = findViewById(R.id.alpha_image);
+
+        // 属性动画
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0f, 1f);
+        valueAnimator.setDuration(2000);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float value = (float) animation.getAnimatedValue();
+                Log.e("AnimationActivity", "onAnimationUpdate: "+ value );
+            }
+        });
+//        valueAnimator.start();
+
+        //属性动画
+        ObjectAnimator alphaAnimation = ObjectAnimator.ofFloat(_imageView, "alpha", 0.2f, 1.0f);
+        alphaAnimation.setDuration(2000);
+        alphaAnimation.start();
+
+
 
     }
 
