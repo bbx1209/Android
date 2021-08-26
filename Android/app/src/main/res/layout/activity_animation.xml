@@ -39,4 +39,54 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/animation_list"
         app:layout_constraintTop_toTopOf="@+id/animation_list" />
+
+    <ImageView
+        android:id="@+id/alpha_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/animation_list"
+        app:layout_constraintStart_toStartOf="@+id/animation_list"
+        app:layout_constraintTop_toBottomOf="@+id/animation_list"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/alpha_but"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startAlpha"
+        android:text="alpha"
+        app:layout_constraintEnd_toEndOf="@+id/stopBut"
+        app:layout_constraintStart_toStartOf="@+id/stopBut"
+        app:layout_constraintTop_toTopOf="@+id/alpha_image" />
+
+    <Button
+        android:id="@+id/rotate_but"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startRodate"
+        android:text="rotate"
+        app:layout_constraintEnd_toEndOf="@+id/alpha_but"
+        app:layout_constraintStart_toStartOf="@+id/alpha_but"
+        app:layout_constraintTop_toBottomOf="@+id/alpha_but" />
+
+    <Button
+        android:id="@+id/translate_but"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startTranslate"
+        android:text="translate"
+        app:layout_constraintEnd_toEndOf="@+id/rotate_but"
+        app:layout_constraintStart_toStartOf="@+id/rotate_but"
+        app:layout_constraintTop_toBottomOf="@+id/rotate_but" />
+
+    <Button
+        android:id="@+id/scale_but"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startScale"
+        android:text="scale"
+        app:layout_constraintEnd_toEndOf="@+id/translate_but"
+        app:layout_constraintStart_toStartOf="@+id/translate_but"
+        app:layout_constraintTop_toBottomOf="@+id/translate_but" />
 </androidx.constraintlayout.widget.ConstraintLayout>

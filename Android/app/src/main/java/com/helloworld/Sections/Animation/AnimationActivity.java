@@ -35,4 +35,16 @@ public class AnimationActivity extends AppCompatActivity {
     public void startAnimationList(View view) {
         drawable.start();
     }
+
+    public void startAlpha(View view) {
+    }
+
+    public void startRodate(View view) {
+    }
+
+    public void startTranslate(View view) {
+    }
+
+    public void startScale(View view) {
+    }
 }
