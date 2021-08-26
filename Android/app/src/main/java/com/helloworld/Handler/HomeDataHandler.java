@@ -2,6 +2,7 @@ package com.helloworld.Handler;
 
 import com.helloworld.BaseModel.ActivityModel;
 import com.helloworld.BaseModel.Params;
+import com.helloworld.Sections.Animation.AnimationActivity;
 import com.helloworld.Sections.Dialog.DialogActivity;
 import com.helloworld.Sections.NoficaitonActiviry.Notifaction;
 import com.helloworld.Sections.ListView.ListViewActivity;
@@ -31,6 +32,8 @@ public class HomeDataHandler {
         list.add(model5);
         addItemToList(DialogActivity.class, "dialog", null);
         addItemToList(ViewPagerActivity.class, "view pager", null);
+        addItemToList(AnimationActivity.class, "动画", null);
+
 
         return list;
     }

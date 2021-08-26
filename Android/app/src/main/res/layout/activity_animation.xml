@@ -6,4 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".Sections.Animation.AnimationActivity">
 
+
+    <ImageView
+        android:id="@+id/animation_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/walk1"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/stopBut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="stopAnimationList"
+        android:text="Stop"
+        app:layout_constraintBottom_toBottomOf="@+id/animation_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/animation_list"
+        app:layout_constraintTop_toTopOf="@+id/animation_list" />
 </androidx.constraintlayout.widget.ConstraintLayout>
