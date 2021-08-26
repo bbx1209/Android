@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity
+            android:name=".Sections.Fragment.FragmentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Sections.Animation.AnimationActivity"
+            android:exported="true" />
+        <activity
             android:name=".Sections.ViewPager.ViewPagerActivity"
             android:exported="true" />
         <activity

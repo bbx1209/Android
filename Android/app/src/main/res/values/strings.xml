@@ -14,4 +14,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_base">BaseActivity</string>
     <string name="TextViewHint">请输入文本</string>
+    <string name="showPopWindow">显示popWindow</string>
 </resources>

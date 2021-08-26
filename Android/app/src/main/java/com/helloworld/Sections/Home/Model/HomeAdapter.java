@@ -63,7 +63,7 @@ public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  
                 String name = viewHolder.textView.getText().toString();
                 Toast.makeText(view.getContext(), name, Toast.LENGTH_SHORT).show();
 
-                int adapterPosition = viewHolder.getAdapterPosition();
+                int adapterPosition = viewHolder.getAbsoluteAdapterPosition();
                 ActivityModel model = itemList.get(adapterPosition);
                 listener.clickListener(v, model);
             }

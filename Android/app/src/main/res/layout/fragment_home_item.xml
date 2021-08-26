@@ -26,7 +26,7 @@
     <TextView
         android:id="@+id/homeitem"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:textSize="14sp"
         android:gravity="center"
         android:textColor="@color/black"
