@@ -48,6 +48,7 @@
         app:layout_constraintEnd_toEndOf="@+id/animation_list"
         app:layout_constraintStart_toStartOf="@+id/animation_list"
         app:layout_constraintTop_toBottomOf="@+id/animation_list"
+        app:srcCompat="@drawable/walk4"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
