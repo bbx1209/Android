@@ -13,19 +13,26 @@ import com.helloworld.R;
 
 public class AnimationActivity extends AppCompatActivity {
 
+    private   AnimationDrawable drawable;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animation);
 
-
+        ImageView imageView = findViewById(R.id.animation_list);
+        imageView.setImageResource(R.drawable.walk_animate);
+        drawable = (AnimationDrawable) imageView.getDrawable();
 
     }
 
     public void stopAnimationList(View view) {
-        ImageView imageView = findViewById(R.id.animation_list);
-        imageView.setImageResource(R.drawable.walk_animate);
-        AnimationDrawable drawable = (AnimationDrawable) imageView.getDrawable();
+
+
+        drawable.stop();
+    }
+
+    public void startAnimationList(View view) {
         drawable.start();
     }
 }

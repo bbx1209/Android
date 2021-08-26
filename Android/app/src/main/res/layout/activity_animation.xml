@@ -21,11 +21,21 @@
 
     <Button
         android:id="@+id/stopBut"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:onClick="stopAnimationList"
         android:text="Stop"
         app:layout_constraintBottom_toBottomOf="@+id/animation_list"
+        app:layout_constraintEnd_toEndOf="@+id/start"
+        app:layout_constraintStart_toStartOf="@+id/start" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startAnimationList"
+        android:text="start"
+        app:layout_constraintBottom_toTopOf="@+id/stopBut"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/animation_list"
         app:layout_constraintTop_toTopOf="@+id/animation_list" />
