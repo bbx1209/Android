@@ -1,4 +1,4 @@
-package com.helloworld.Sections.Fragment;
+package com.helloworld.Sections.fragment;
 
 import android.os.Bundle;
 

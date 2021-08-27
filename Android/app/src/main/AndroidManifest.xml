@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity
-            android:name=".Sections.Fragment.FragmentActivity"
+            android:name=".Sections.fragment.FragmentActivity"
             android:exported="true" />
         <activity
             android:name=".Sections.Animation.AnimationActivity"
