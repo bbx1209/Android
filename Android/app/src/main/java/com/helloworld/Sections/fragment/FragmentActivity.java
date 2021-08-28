@@ -53,7 +53,14 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.removeBut:
                 Log.e(TAG, "onClick: remove" );
-                replaceFregment(new Fragment_red());
+
+                Bundle bundle = new Bundle();
+                bundle.putString("msg", "this is a param");
+                bundle.putString("key", "this is a param");
+                Fragment_red fragment_red = new Fragment_red();
+                fragment_red.setArguments(bundle);
+
+                replaceFregment(fragment_red);
                 break;
             default:
                 break;
