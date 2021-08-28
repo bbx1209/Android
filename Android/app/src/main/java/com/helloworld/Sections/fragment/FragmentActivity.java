@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.helloworld.Interfaces.ParamInterface;
 import com.helloworld.R;
 
 
@@ -38,7 +39,17 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.replaceBut:
                 Log.e(TAG, "onClick: replace" );
-                replaceFregment(new Fragment_blank());
+                replaceFregment(new Fragment_blank(new ParamInterface() {
+                    @Override
+                    public void sentParamToActivity(String msg) {
+                        Log.e(TAG, "sentParamToActivity: "+ msg );
+                    }
+
+                    @Override
+                    public String getParamFromActivity() {
+                        return "返回的参数";
+                    }
+                }));
                 break;
             case R.id.removeBut:
                 Log.e(TAG, "onClick: remove" );
