@@ -4,6 +4,7 @@ import com.helloworld.BaseModel.ActivityModel;
 import com.helloworld.BaseModel.Params;
 import com.helloworld.Sections.Animation.AnimationActivity;
 import com.helloworld.Sections.Dialog.DialogActivity;
+import com.helloworld.Sections.ViewPager.ViewPager2Activity;
 import com.helloworld.Sections.fragment.FragmentActivity;
 import com.helloworld.Sections.NoficaitonActiviry.Notifaction;
 import com.helloworld.Sections.ListView.ListViewActivity;
@@ -33,6 +34,7 @@ public class HomeDataHandler {
         list.add(model5);
         addItemToList(DialogActivity.class, "dialog", null);
         addItemToList(ViewPagerActivity.class, "view pager", null);
+        addItemToList(ViewPager2Activity.class, "view pager 2", null);
         addItemToList(AnimationActivity.class, "动画", null);
         addItemToList(FragmentActivity.class, "Fragment", null);
 
