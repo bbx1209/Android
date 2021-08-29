@@ -3,7 +3,6 @@
     package="com.helloworld">
     <!-- - 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
-<!--    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>-->
 
     <application
         android:allowBackup="true"
@@ -12,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
+        <activity
+            android:name=".Sections.glide.GlideActivity"
+            android:exported="true" />
         <activity
             android:name=".Sections.broatCast.BroadCastActivity"
             android:exported="true" />
@@ -71,17 +73,14 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".Sections.broatCast.StaticReciver"
-            android:exported="true"
+        <receiver
+            android:name=".Sections.broatCast.StaticReciver"
             android:enabled="true"
-            >
+            android:exported="true">
             <intent-filter>
-                <action android:name="RECEIVER_STATIC"/>
+                <action android:name="RECEIVER_STATIC" />
             </intent-filter>
         </receiver>
-
-
-
     </application>
 
 </manifest>
