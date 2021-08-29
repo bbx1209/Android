@@ -18,7 +18,7 @@
         >
 
         <ImageView
-
+            android:id="@+id/chat_iv"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_gravity="center"
@@ -45,11 +45,11 @@
         >
 
         <ImageView
-
+            android:id="@+id/contact_iv"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_gravity="center"
-            android:background="@drawable/tongxunlu"
+            android:background="@drawable/contact_item"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -72,7 +72,7 @@
         >
 
         <ImageView
-
+            android:id="@+id/faxian_iv"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_gravity="center"
@@ -99,7 +99,7 @@
         >
 
         <ImageView
-
+            android:id="@+id/wo_iv"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_gravity="center"
