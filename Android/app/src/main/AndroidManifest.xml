@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity
+            android:name=".Sections.weChat.WeChatActivity"
+            android:exported="true" />
+        <activity
             android:name=".Sections.ViewPager.ViewPager2Activity"
             android:exported="true" />
         <activity
