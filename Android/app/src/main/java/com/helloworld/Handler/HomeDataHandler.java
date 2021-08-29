@@ -4,6 +4,7 @@ import com.helloworld.BaseModel.ActivityModel;
 import com.helloworld.BaseModel.Params;
 import com.helloworld.Sections.Animation.AnimationActivity;
 import com.helloworld.Sections.Dialog.DialogActivity;
+import com.helloworld.Sections.OKHttp.OKHttpActivity;
 import com.helloworld.Sections.ViewPager.ViewPager2Activity;
 import com.helloworld.Sections.broatCast.BroadCastActivity;
 import com.helloworld.Sections.fragment.FragmentActivity;
@@ -41,6 +42,7 @@ public class HomeDataHandler {
         addItemToList(FragmentActivity.class, "Fragment", null);
         addItemToList(WeChatActivity.class, "微信", null);
         addItemToList(BroadCastActivity.class, "广播", null);
+        addItemToList(OKHttpActivity.class, "okHttp", null);
 
 
         return list;
