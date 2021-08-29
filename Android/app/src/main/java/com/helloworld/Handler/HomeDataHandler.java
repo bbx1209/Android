@@ -12,6 +12,7 @@ import com.helloworld.Sections.PassParam.PassParam;
 import com.helloworld.Sections.Popwindow.PopWindowActivity;
 import com.helloworld.Sections.UIElementActivity.UIElementActivity;
 import com.helloworld.Sections.ViewPager.ViewPagerActivity;
+import com.helloworld.Sections.weChat.WeChatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,7 @@ public class HomeDataHandler {
         addItemToList(ViewPager2Activity.class, "view pager 2", null);
         addItemToList(AnimationActivity.class, "动画", null);
         addItemToList(FragmentActivity.class, "Fragment", null);
+        addItemToList(WeChatActivity.class, "微信", null);
 
 
         return list;
