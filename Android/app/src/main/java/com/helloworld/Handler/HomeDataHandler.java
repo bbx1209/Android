@@ -5,6 +5,7 @@ import com.helloworld.BaseModel.Params;
 import com.helloworld.Sections.Animation.AnimationActivity;
 import com.helloworld.Sections.Dialog.DialogActivity;
 import com.helloworld.Sections.ViewPager.ViewPager2Activity;
+import com.helloworld.Sections.broatCast.BroadCastActivity;
 import com.helloworld.Sections.fragment.FragmentActivity;
 import com.helloworld.Sections.NoficaitonActiviry.Notifaction;
 import com.helloworld.Sections.ListView.ListViewActivity;
@@ -39,6 +40,7 @@ public class HomeDataHandler {
         addItemToList(AnimationActivity.class, "动画", null);
         addItemToList(FragmentActivity.class, "Fragment", null);
         addItemToList(WeChatActivity.class, "微信", null);
+        addItemToList(BroadCastActivity.class, "广播", null);
 
 
         return list;
