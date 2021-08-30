@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.helloworld">
+    package="com.helloworld"
+    android:versionCode="1"
+    android:versionName="1.0">
     <!-- - 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
+        <activity
+            android:name=".Sections.chat.ChatActivity"
+            android:exported="true" />
         <activity
             android:name=".Sections.glide.GlideActivity"
             android:exported="true" />

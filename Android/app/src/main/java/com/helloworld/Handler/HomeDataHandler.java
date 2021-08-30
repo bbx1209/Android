@@ -14,6 +14,7 @@ import com.helloworld.Sections.PassParam.PassParam;
 import com.helloworld.Sections.Popwindow.PopWindowActivity;
 import com.helloworld.Sections.UIElementActivity.UIElementActivity;
 import com.helloworld.Sections.ViewPager.ViewPagerActivity;
+import com.helloworld.Sections.glide.GlideActivity;
 import com.helloworld.Sections.weChat.WeChatActivity;
 
 import java.util.ArrayList;
@@ -43,6 +44,7 @@ public class HomeDataHandler {
         addItemToList(WeChatActivity.class, "微信", null);
         addItemToList(BroadCastActivity.class, "广播", null);
         addItemToList(OKHttpActivity.class, "okHttp", null);
+        addItemToList(GlideActivity.class, "glide usage", null);
 
 
         return list;

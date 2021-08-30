@@ -10,6 +10,6 @@ public class DynamicReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.e("DynamicReceiver", "onReceive: 我是动态注册观察者 ");
-    Toast.makeText(context, "我是动态注册观察者", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "我是动态注册观察者", Toast.LENGTH_SHORT).show();
     }
 }
