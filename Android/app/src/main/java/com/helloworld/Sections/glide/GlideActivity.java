@@ -22,7 +22,7 @@ public class GlideActivity extends AppCompatActivity {
         ImageView imageView4 = findViewById(R.id.imageView4);
 
         Glide.with(this)
-                .load("")
+                .load(ImageUrl.imageUrl1)
                 .into(imageView2);
 
 
