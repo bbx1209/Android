@@ -2,11 +2,17 @@ package com.helloworld.Sections.broatCast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.helloworld.R;
 
@@ -14,7 +20,7 @@ import com.helloworld.R;
 public class BroadCastActivity extends AppCompatActivity {
 
     private DynamicReceiver dynamicReceiver;
-    private NetworkReceiver networkReceiver;
+    private  NetworkReveiver networkReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +36,7 @@ public class BroadCastActivity extends AppCompatActivity {
 
         IntentFilter netFilter = new IntentFilter();
         netFilter.addAction(BroadCastReceiverKey.NETWORKCHANGR);
-        networkReceiver = new NetworkReceiver()
+        networkReceiver = new NetworkReveiver();
         registerReceiver(networkReceiver, netFilter);
 
 
@@ -58,4 +64,23 @@ public class BroadCastActivity extends AppCompatActivity {
         unregisterReceiver(dynamicReceiver);
         unregisterReceiver(networkReceiver);
     }
+
+    class NetworkReveiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+            NetworkInfo netInfo = manager.getNetworkInfo(0);
+            if (netInfo != null && netInfo.isAvailable()) {
+
+                Toast.makeText(context, "net work is availabel",Toast.LENGTH_SHORT).show();
+            } else
+            {
+                Toast.makeText(context, "net work is unavailabel",Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
 }
+
