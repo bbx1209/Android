@@ -1,6 +1,7 @@
 package com.helloworld.Sections.broatCast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -22,6 +23,8 @@ public class BroadCastActivity extends AppCompatActivity {
     private DynamicReceiver dynamicReceiver;
     private  NetworkReveiver networkReceiver;
 
+    private LocalBroadcastManager localBroadcastManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,11 @@ public class BroadCastActivity extends AppCompatActivity {
         networkReceiver = new NetworkReveiver();
         registerReceiver(networkReceiver, netFilter);
 
+        localBroadcastManager =   LocalBroadcastManager.getInstance(this);
+        LocalReceiver receiver = new LocalReceiver();
+        IntentFilter localFilter = new IntentFilter();
+        localFilter.addAction(BroadCastReceiverKey.LOCALRCEIVER);
+        localBroadcastManager.registerReceiver(receiver, localFilter);
 
     }
 
@@ -63,6 +71,12 @@ public class BroadCastActivity extends AppCompatActivity {
 
         unregisterReceiver(dynamicReceiver);
         unregisterReceiver(networkReceiver);
+    }
+
+    public void sendLocalReciver(View view) {
+        Intent intent = new Intent();
+        intent.setAction(BroadCastReceiverKey.LOCALRCEIVER);
+        localBroadcastManager.sendBroadcast(intent);
     }
 
     class NetworkReveiver extends BroadcastReceiver {
