@@ -3,6 +3,7 @@ package com.helloworld.Sections.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,6 +35,10 @@ public class Fragment_blank extends Fragment {
 
         Log.e(TAG, "onCreate: " + param );
 
+        // fragment 调activity 的方法
+        MyFragmentActivity activity = (MyFragmentActivity)getActivity();
+
+        activity.fragmentCallActivity();
 
     }
 

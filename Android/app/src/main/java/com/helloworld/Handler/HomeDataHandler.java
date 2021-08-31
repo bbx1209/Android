@@ -4,14 +4,19 @@ import com.helloworld.BaseModel.ActivityModel;
 import com.helloworld.BaseModel.Params;
 import com.helloworld.Sections.Animation.AnimationActivity;
 import com.helloworld.Sections.Dialog.DialogActivity;
+import com.helloworld.Sections.OKHttp.OKHttpActivity;
 import com.helloworld.Sections.ViewPager.ViewPager2Activity;
-import com.helloworld.Sections.fragment.FragmentActivity;
+import com.helloworld.Sections.broatCast.BroadCastActivity;
+import com.helloworld.Sections.chat.ChatActivity;
+import com.helloworld.Sections.fragment.MyFragmentActivity;
 import com.helloworld.Sections.NoficaitonActiviry.Notifaction;
 import com.helloworld.Sections.ListView.ListViewActivity;
 import com.helloworld.Sections.PassParam.PassParam;
 import com.helloworld.Sections.Popwindow.PopWindowActivity;
 import com.helloworld.Sections.UIElementActivity.UIElementActivity;
 import com.helloworld.Sections.ViewPager.ViewPagerActivity;
+import com.helloworld.Sections.glide.GlideActivity;
+import com.helloworld.Sections.weChat.WeChatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +27,7 @@ public class HomeDataHandler {
 
     public List<ActivityModel> homeList() {
 
+        addItemToList(ChatActivity.class, "聊天页面", null);
         ActivityModel model1 = new ActivityModel(Notifaction.class, "通知", null);
         list.add(model1);
         ActivityModel model2 = new ActivityModel(ListViewActivity.class, "列表页", null);
@@ -36,8 +42,11 @@ public class HomeDataHandler {
         addItemToList(ViewPagerActivity.class, "view pager", null);
         addItemToList(ViewPager2Activity.class, "view pager 2", null);
         addItemToList(AnimationActivity.class, "动画", null);
-        addItemToList(FragmentActivity.class, "Fragment", null);
-
+        addItemToList(MyFragmentActivity.class, "Fragment", null);
+        addItemToList(WeChatActivity.class, "微信", null);
+        addItemToList(BroadCastActivity.class, "广播", null);
+        addItemToList(OKHttpActivity.class, "okHttp", null);
+        addItemToList(GlideActivity.class, "glide usage", null);
 
         return list;
     }

@@ -1,21 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.helloworld">
+    package="com.helloworld"
+    android:versionCode="1"
+    android:versionName="1.0">
     <!-- - 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- - 网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity
+            android:name=".Sections.chat.ChatActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Sections.glide.GlideActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Sections.broatCast.BroadCastActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Sections.weChat.WeChatActivity"
+            android:exported="true" />
+        <activity
             android:name=".Sections.ViewPager.ViewPager2Activity"
             android:exported="true" />
         <activity
-            android:name=".Sections.fragment.FragmentActivity"
+            android:name=".Sections.fragment.MyFragmentActivity"
             android:exported="true" />
         <activity
             android:name=".Sections.Animation.AnimationActivity"
@@ -56,13 +73,24 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme.HelloWorld.NoActionBar" /> <!-- <activity android:name=".Sections.Home.Activity.HomeActivity" -->
         <!-- android:exported="true"/> -->
-        <activity android:name=".Sections.Home.Activity.HomeActivity">
+        <activity android:name=".Sections.Home.Activity.HomeActivity"
+            android:launchMode="singleTop"
+            >  <!--  launchmodel : singletop,如果在栈顶则不会新创建，否则还是会创建； singleTask，如果栈里有该对象，则会将它上边的activity全部弹出，singleInstance，单例，会另外启动一个栈管理，退出次序未知/>-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".Sections.broatCast.StaticReciver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="RECEIVER_STATIC" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
