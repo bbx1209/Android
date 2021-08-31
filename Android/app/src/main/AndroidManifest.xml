@@ -71,7 +71,9 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme.HelloWorld.NoActionBar" /> <!-- <activity android:name=".Sections.Home.Activity.HomeActivity" -->
         <!-- android:exported="true"/> -->
-        <activity android:name=".Sections.Home.Activity.HomeActivity">
+        <activity android:name=".Sections.Home.Activity.HomeActivity"
+            android:launchMode="singleTop"
+            >  <!--  launchmodel : singletop,如果在栈顶则不会新创建，否则还是会创建； singleTask，如果栈里有该对象，则会将它上边的activity全部弹出，singleInstance，单例，会另外启动一个栈管理，退出次序未知/>-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
