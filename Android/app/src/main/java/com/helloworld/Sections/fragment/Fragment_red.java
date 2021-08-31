@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.helloworld.R;
 
@@ -20,6 +21,10 @@ public class Fragment_red extends Fragment {
 
     private static final String TAG = "Fragment_red";
     private View root;
+
+    public  void activityCallFrgmentMethod(Context context) {
+        Toast.makeText(context, "activity call fragment ", Toast.LENGTH_SHORT).show();
+    }
 
     public Fragment_red() {
         // Required empty public constructor

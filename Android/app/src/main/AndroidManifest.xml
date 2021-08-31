@@ -30,7 +30,7 @@
             android:name=".Sections.ViewPager.ViewPager2Activity"
             android:exported="true" />
         <activity
-            android:name=".Sections.fragment.FragmentActivity"
+            android:name=".Sections.fragment.MyFragmentActivity"
             android:exported="true" />
         <activity
             android:name=".Sections.Animation.AnimationActivity"

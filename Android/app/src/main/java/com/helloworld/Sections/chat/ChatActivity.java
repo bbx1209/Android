@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.helloworld.R;
 
@@ -32,5 +33,10 @@ public class ChatActivity extends AppCompatActivity {
     List<MsgModel>queryData() {
 
         return new ArrayList<>();
+    }
+
+    public void sendMsg(View view) {
+
+
     }
 }
