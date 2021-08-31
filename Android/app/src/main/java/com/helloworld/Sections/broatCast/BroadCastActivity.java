@@ -22,6 +22,7 @@ public class BroadCastActivity extends AppCompatActivity {
 
     private DynamicReceiver dynamicReceiver;
     private  NetworkReveiver networkReceiver;
+    private  LocalReceiver localReceiver;
 
     private LocalBroadcastManager localBroadcastManager;
 
@@ -43,10 +44,10 @@ public class BroadCastActivity extends AppCompatActivity {
         registerReceiver(networkReceiver, netFilter);
 
         localBroadcastManager =   LocalBroadcastManager.getInstance(this);
-        LocalReceiver receiver = new LocalReceiver();
+         localReceiver = new LocalReceiver();
         IntentFilter localFilter = new IntentFilter();
         localFilter.addAction(BroadCastReceiverKey.LOCALRCEIVER);
-        localBroadcastManager.registerReceiver(receiver, localFilter);
+        localBroadcastManager.registerReceiver(localReceiver, localFilter);
 
     }
 
@@ -71,6 +72,7 @@ public class BroadCastActivity extends AppCompatActivity {
 
         unregisterReceiver(dynamicReceiver);
         unregisterReceiver(networkReceiver);
+        localBroadcastManager.unregisterReceiver(localReceiver);
     }
 
     public void sendLocalReciver(View view) {
