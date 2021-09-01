@@ -8,6 +8,7 @@ import com.helloworld.Sections.OKHttp.OKHttpActivity;
 import com.helloworld.Sections.ViewPager.ViewPager2Activity;
 import com.helloworld.Sections.broatCast.BroadCastActivity;
 import com.helloworld.Sections.chat.ChatActivity;
+import com.helloworld.Sections.database.DataBaseActivity;
 import com.helloworld.Sections.fragment.MyFragmentActivity;
 import com.helloworld.Sections.NoficaitonActiviry.Notifaction;
 import com.helloworld.Sections.ListView.ListViewActivity;
@@ -26,6 +27,8 @@ public class HomeDataHandler {
     final List<ActivityModel> list = new ArrayList<>();
 
     public List<ActivityModel> homeList() {
+
+        addItemToList(DataBaseActivity.class, "数据存储", null);
 
         addItemToList(ChatActivity.class, "聊天页面", null);
         ActivityModel model1 = new ActivityModel(Notifaction.class, "通知", null);
