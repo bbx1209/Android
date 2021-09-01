@@ -3,7 +3,9 @@ package com.helloworld.Sections.database;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
 
@@ -100,12 +102,30 @@ public class DataBaseActivity extends AppCompatActivity {
     }
 
     // 写入SP
+    // sp 存储与读取需要用相同的获取  SharedPreferences 的方式，否则 读取不出来
     public void writeInSP(View view) {
+
+        SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        SharedPreferences.Editor editor = getSharedPreferences("data", MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = defaultSharedPreferences.edit();
+
+        editor.putString("name", "Tom");
+        editor.putInt("age", 10);
+        editor.putBoolean("married", false);
+        editor.apply();
 
     }
 
     // 从SP中读取数据
     public void readFromSP(View view) {
+
+        SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        SharedPreferences defaultSharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
+
+        String name = defaultSharedPreferences.getString("name", "");
+        spEditText.setText(name);
+
+
     }
 
     // 写入数据库
