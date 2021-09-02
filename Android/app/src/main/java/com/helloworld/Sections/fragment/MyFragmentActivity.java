@@ -9,12 +9,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.helloworld.Interfaces.ParamInterface;
 import com.helloworld.R;
 
 
-public class FragmentActivity extends AppCompatActivity implements View.OnClickListener {
+public class MyFragmentActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG ="FragmentActivity" ;
 
@@ -30,7 +31,10 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
         Button removeBut = findViewById(R.id.removeBut);
         removeBut.setOnClickListener(this);
 
+        // activity 调 fragment 的方法
 
+//        FragmentManager supportFragmentManager = getSupportFragmentManager();
+//        supportFragmentManager.findFragmentById(R.id.)
 
     }
 
@@ -58,6 +62,7 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
                 bundle.putString("msg", "this is a param");
                 bundle.putString("key", "this is a param");
                 Fragment_red fragment_red = new Fragment_red();
+
                 fragment_red.setArguments(bundle);
 
                 replaceFregment(fragment_red);
@@ -73,6 +78,10 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
         transaction.replace(R.id.frameLaout, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    public  void fragmentCallActivity() {
+        Toast.makeText(this, "fragment call activity ", Toast.LENGTH_LONG).show();
     }
 
 }
