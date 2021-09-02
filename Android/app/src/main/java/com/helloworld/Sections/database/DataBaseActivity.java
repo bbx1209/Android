@@ -2,10 +2,14 @@ package com.helloworld.Sections.database;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -26,6 +30,7 @@ public class DataBaseActivity extends AppCompatActivity {
     private EditText spEditText;
     private EditText dbEditText;
     private MyDBhelper dBhelper;
+    private SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +42,7 @@ public class DataBaseActivity extends AppCompatActivity {
         dbEditText = findViewById(R.id.DBText);
 
         dBhelper = new MyDBhelper(this, "BookStore.db", null, 1);
-
+        db = dBhelper.getWritableDatabase();
 
     }
 
@@ -91,13 +96,13 @@ public class DataBaseActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-           if (reader != null){
-               try {
-                   reader.close();
-               } catch (IOException e) {
-                   e.printStackTrace();
-               }
-           }
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         String result = content.toString();
@@ -130,22 +135,56 @@ public class DataBaseActivity extends AppCompatActivity {
 
 
     }
-
-    // 写入数据库
-    public void writeInDB(View view) {
-    }
-
-    // 从数据库中读取数据
-    public void readFromDB(View view) {
-    }
-
-    //从数据库中删除
-    public void deleteFromDB(View view) {
-    }
+    //MARK:-----  SQLITE ----
 
     //创建表
     public void createTable(View view) {
         dBhelper.getWritableDatabase();
 
     }
+
+    // 写入数据库
+    public void writeInDB(View view) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", "鲸鱼池塘");
+        contentValues.put("author", "蔡智恒");
+        contentValues.put("pages", 450);
+        contentValues.put("price", 25.6);
+        db.insert("Book", null, contentValues);
+    }
+
+
+    //更新数据
+    public void updateData(View view) {
+        ContentValues values = new ContentValues();
+        values.put("price", 50.1);
+        db.update("Book", values, "name = ?", new  String[]{"鲸鱼池塘"});
+    }
+
+    // 从数据库中读取数据
+    public void readFromDB(View view) {
+        Cursor cursor = db.query("Book", null, null, null, null, null, null);
+        if (cursor.moveToFirst()) {
+            do {
+                String name = cursor.getString(cursor.getColumnIndex("name"));
+                double price =  cursor.getDouble(cursor.getColumnIndex("price"));
+                dbEditText.setText(name);
+                Log.d("====== DATA BASE =====", "readFromDB" + name + price);
+
+            }while (cursor.moveToNext());
+        } else {
+            dbEditText.setText(null);
+        }
+
+        cursor.close();
+
+    }
+
+    //从数据库中删除
+    public void deleteFromDB(View view) {
+        db.delete("Book",null, null);
+
+    }
+
+
 }
