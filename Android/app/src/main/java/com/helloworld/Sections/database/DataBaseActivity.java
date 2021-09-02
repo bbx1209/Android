@@ -25,6 +25,7 @@ public class DataBaseActivity extends AppCompatActivity {
     private EditText fileEditText;
     private EditText spEditText;
     private EditText dbEditText;
+    private MyDBhelper dBhelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,8 @@ public class DataBaseActivity extends AppCompatActivity {
         fileEditText = findViewById(R.id.fileText);
         spEditText = findViewById(R.id.SPText);
         dbEditText = findViewById(R.id.DBText);
+
+        dBhelper = new MyDBhelper(this, "BookStore.db", null, 1);
 
 
     }
@@ -138,5 +141,11 @@ public class DataBaseActivity extends AppCompatActivity {
 
     //从数据库中删除
     public void deleteFromDB(View view) {
+    }
+
+    //创建表
+    public void createTable(View view) {
+        dBhelper.getWritableDatabase();
+
     }
 }

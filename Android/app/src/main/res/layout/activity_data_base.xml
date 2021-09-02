@@ -129,6 +129,14 @@
 
 
         </LinearLayout>
+        <Button
+            android:id="@+id/createTabel"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:onClick="createTable"
+            android:text="创建表"/>
+
     </LinearLayout>
 
 
