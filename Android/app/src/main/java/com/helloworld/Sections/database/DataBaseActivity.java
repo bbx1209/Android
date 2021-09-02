@@ -15,6 +15,8 @@ import android.widget.EditText;
 
 import com.helloworld.R;
 
+import org.litepal.LitePal;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
@@ -185,6 +187,13 @@ public class DataBaseActivity extends AppCompatActivity {
         db.delete("Book",null, null);
 
     }
+
+
+    //MARK: litepal
+
+    public void createTable() {
+        LitePal.getDatabase();
+     }
 
 
 }
