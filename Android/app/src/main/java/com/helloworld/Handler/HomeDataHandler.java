@@ -22,6 +22,7 @@ import com.helloworld.Sections.glide.GlideActivity;
 import com.helloworld.Sections.service.ServiceActivity;
 import com.helloworld.Sections.thread.ThreadActivity;
 import com.helloworld.Sections.weChat.WeChatActivity;
+import com.helloworld.Sections.webview.WebViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,7 @@ public class HomeDataHandler {
         addItemToList(AudioVideoActivity.class, "音视频", null);
         addItemToList(ThreadActivity.class, "多线程", null);
         addItemToList(ServiceActivity.class, "服务Service", null);
+        addItemToList(WebViewActivity.class, "webView", null);
 
         addItemToList(ChatActivity.class, "聊天页面", null);
 
