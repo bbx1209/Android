@@ -19,6 +19,7 @@ import com.helloworld.Sections.Popwindow.PopWindowActivity;
 import com.helloworld.Sections.UIElementActivity.UIElementActivity;
 import com.helloworld.Sections.ViewPager.ViewPagerActivity;
 import com.helloworld.Sections.glide.GlideActivity;
+import com.helloworld.Sections.thread.ThreadActivity;
 import com.helloworld.Sections.weChat.WeChatActivity;
 
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class HomeDataHandler {
         addItemToList(DataBaseActivity.class, "数据存储", null);
         addItemToList(PhotoActivity.class, "拍照与相片", null);
         addItemToList(AudioVideoActivity.class, "音视频", null);
+        addItemToList(ThreadActivity.class, "多线程", null);
 
         addItemToList(ChatActivity.class, "聊天页面", null);
 
