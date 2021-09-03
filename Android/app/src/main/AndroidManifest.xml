@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity
+            android:name=".Sections.audio_video.AudioVideoActivity"
+            android:exported="true" />
+        <activity
             android:name=".Sections.Photo.PhotoActivity"
             android:exported="true" />
         <activity

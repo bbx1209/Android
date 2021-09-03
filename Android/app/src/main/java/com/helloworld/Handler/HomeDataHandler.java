@@ -7,6 +7,7 @@ import com.helloworld.Sections.Dialog.DialogActivity;
 import com.helloworld.Sections.OKHttp.OKHttpActivity;
 import com.helloworld.Sections.Photo.PhotoActivity;
 import com.helloworld.Sections.ViewPager.ViewPager2Activity;
+import com.helloworld.Sections.audio_video.AudioVideoActivity;
 import com.helloworld.Sections.broatCast.BroadCastActivity;
 import com.helloworld.Sections.chat.ChatActivity;
 import com.helloworld.Sections.database.DataBaseActivity;
@@ -31,18 +32,20 @@ public class HomeDataHandler {
 
         addItemToList(DataBaseActivity.class, "数据存储", null);
         addItemToList(PhotoActivity.class, "拍照与相片", null);
+        addItemToList(AudioVideoActivity.class, "音视频", null);
 
         addItemToList(ChatActivity.class, "聊天页面", null);
-        ActivityModel model1 = new ActivityModel(Notifaction.class, "通知", null);
-        list.add(model1);
-        ActivityModel model2 = new ActivityModel(ListViewActivity.class, "列表页", null);
-        list.add(model2);
-        ActivityModel model3 = new ActivityModel(PassParam.class, "页面传值", null);
-        list.add(model3);
-        ActivityModel model4 = new ActivityModel(UIElementActivity.class, "UI元素", null);
-        list.add(model4);
-        ActivityModel model5 = new ActivityModel(PopWindowActivity.class, "PopWindow", null);
-        list.add(model5);
+
+        addItemToList(Notifaction.class, "通知", null);
+
+        addItemToList(ListViewActivity.class, "列表页", null);
+
+        addItemToList(PassParam.class, "页面传值", null);
+
+        addItemToList(UIElementActivity.class, "UI元素", null);
+
+        addItemToList(PopWindowActivity.class, "PopWindow", null);
+
         addItemToList(DialogActivity.class, "dialog", null);
         addItemToList(ViewPagerActivity.class, "view pager", null);
         addItemToList(ViewPager2Activity.class, "view pager 2", null);
