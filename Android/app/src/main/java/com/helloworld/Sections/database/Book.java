@@ -1,8 +1,6 @@
 package com.helloworld.Sections.database;
 
-import org.litepal.crud.DataSupport;
-
-public class Book extends DataSupport {
+public class Book   {
 
     private  int id;
     private  String name;

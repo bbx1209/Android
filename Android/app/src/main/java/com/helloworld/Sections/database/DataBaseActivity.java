@@ -15,7 +15,6 @@ import android.widget.EditText;
 
 import com.helloworld.R;
 
-import org.litepal.LitePal;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -189,11 +188,6 @@ public class DataBaseActivity extends AppCompatActivity {
     }
 
 
-    //MARK: litepal
-
-    public void createTable() {
-        LitePal.getDatabase();
-     }
 
 
 }
