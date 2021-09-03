@@ -184,7 +184,6 @@ public class DataBaseActivity extends AppCompatActivity {
     //从数据库中删除
     public void deleteFromDB(View view) {
         db.delete("Book",null, null);
-
     }
 
 

@@ -5,6 +5,7 @@ import com.helloworld.BaseModel.Params;
 import com.helloworld.Sections.Animation.AnimationActivity;
 import com.helloworld.Sections.Dialog.DialogActivity;
 import com.helloworld.Sections.OKHttp.OKHttpActivity;
+import com.helloworld.Sections.Photo.PhotoActivity;
 import com.helloworld.Sections.ViewPager.ViewPager2Activity;
 import com.helloworld.Sections.broatCast.BroadCastActivity;
 import com.helloworld.Sections.chat.ChatActivity;
@@ -29,6 +30,7 @@ public class HomeDataHandler {
     public List<ActivityModel> homeList() {
 
         addItemToList(DataBaseActivity.class, "数据存储", null);
+        addItemToList(PhotoActivity.class, "拍照与相片", null);
 
         addItemToList(ChatActivity.class, "聊天页面", null);
         ActivityModel model1 = new ActivityModel(Notifaction.class, "通知", null);
