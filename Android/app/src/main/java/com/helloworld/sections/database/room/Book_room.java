@@ -1,7 +1,12 @@
 package com.helloworld.sections.database.room;
 
-public class Book_room {
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "Book_room")
+public class Book_room {
+    @PrimaryKey(autoGenerate = true)
     private  int id;
     private  String name;
     private String author;
@@ -46,5 +51,16 @@ public class Book_room {
 
     public void setPages(int pages) {
         this.pages = pages;
+    }
+
+    @Override
+    public String toString() {
+        return "Book_room{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", price=" + price +
+                ", pages=" + pages +
+                '}';
     }
 }
