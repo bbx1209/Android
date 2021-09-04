@@ -2,11 +2,8 @@ package com.helloworld.BaseActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActivityManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.LinearLayout;
 
 
 import com.helloworld.Handler.MyAcitivityManager;
@@ -30,5 +27,9 @@ public class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         MyAcitivityManager.popActivity(this);
+    }
+
+    protected void exitAPP() {
+        MyAcitivityManager.finishAll();
     }
 }
