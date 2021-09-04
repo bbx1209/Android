@@ -146,47 +146,58 @@ public class DataBaseActivity extends AppCompatActivity {
 
     // 写入数据库
     public void writeInDB(View view) {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", "鲸鱼池塘");
-        contentValues.put("author", "蔡智恒");
-        contentValues.put("pages", 450);
-        contentValues.put("price", 25.6);
-        db.insert("Book", null, contentValues);
+        if (db.isOpen()) {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("name", "鲸鱼池塘");
+            contentValues.put("author", "蔡智恒");
+            contentValues.put("pages", 450);
+            contentValues.put("price", 25.6);
+            db.insert("Book", null, contentValues);
+            db.close();
+        }
+
     }
 
 
     //更新数据
     public void updateData(View view) {
-        ContentValues values = new ContentValues();
-        values.put("price", 50.1);
-        db.update("Book", values, "name = ?", new  String[]{"鲸鱼池塘"});
+        if (db.isOpen()) {
+            ContentValues values = new ContentValues();
+            values.put("price", 50.1);
+            db.update("Book", values, "name = ?", new String[]{"鲸鱼池塘"});
+            db.close();
+        }
     }
 
     // 从数据库中读取数据
     public void readFromDB(View view) {
-        Cursor cursor = db.query("Book", null, null, null, null, null, null);
-        if (cursor.moveToFirst()) {
-            do {
-                String name = cursor.getString(cursor.getColumnIndex("name"));
-                double price =  cursor.getDouble(cursor.getColumnIndex("price"));
-                dbEditText.setText(name);
-                Log.d("====== DATA BASE =====", "readFromDB" + name + price);
+        if (db.isOpen()) {
+            Cursor cursor = db.query("Book", null, null, null, null, null, null);
+            if (cursor.moveToFirst()) {
+                do {
+                    String name = cursor.getString(cursor.getColumnIndex("name"));
+                    double price = cursor.getDouble(cursor.getColumnIndex("price"));
+                    dbEditText.setText(name);
+                    Log.d("====== DATA BASE =====", "readFromDB" + name + price);
 
-            }while (cursor.moveToNext());
-        } else {
-            dbEditText.setText(null);
+                } while (cursor.moveToNext());
+            } else {
+                dbEditText.setText(null);
+            }
+
+            cursor.close();
+            db.close();
         }
-
-        cursor.close();
 
     }
 
     //从数据库中删除
     public void deleteFromDB(View view) {
-        db.delete("Book",null, null);
+        if (db.isOpen()) {
+            db.delete("Book", null, null);
+            db.close();
+        }
     }
-
-
 
 
 }
