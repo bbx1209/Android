@@ -2,15 +2,12 @@ package com.helloworld.Sections.OKHttp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.DownloadManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.textclassifier.TextLinks;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.helloworld.Person;
 import com.helloworld.R;
 
 import java.io.IOException;
