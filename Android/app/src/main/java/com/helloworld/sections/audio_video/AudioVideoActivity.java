@@ -42,6 +42,7 @@ public class AudioVideoActivity extends AppCompatActivity {
 
         } else {
             initMediaPlayer();
+            initVideoPath();
         }
     }
 
@@ -77,17 +78,32 @@ public class AudioVideoActivity extends AppCompatActivity {
 
     //MARK: ------  视频 -------
 
+    private void initVideoPath() {
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), "Camera/VID_20210413_213556.mp4");
+        String path = file.getPath();
+        videoView.setVideoPath(path);
+        Log.d(TAG, "initVideoPath: " + path);
+    }
+
     //播放
     public void videoPlay(View view) {
-
+        if (!videoView.isPlaying()) {
+            videoView.start();
+        }
     }
 
     //暂停
     public void videoPause(View view) {
+        if (videoView.isPlaying()) {
+            videoView.pause();;
+        }
     }
 
     //重新播放
     public void videoReplay(View view) {
+        if (videoView.isPlaying()) {
+            videoView.resume();
+        }
     }
 
 
@@ -122,6 +138,7 @@ public class AudioVideoActivity extends AppCompatActivity {
         }
 
     }
+
     //销毁播放器
     @Override
     protected void onDestroy() {
@@ -129,6 +146,10 @@ public class AudioVideoActivity extends AppCompatActivity {
         if (mediaPlayer != null) {
             mediaPlayer.stop();
             mediaPlayer.release();
+        }
+
+        if (videoView != null) {
+            videoView.suspend();
         }
     }
 }
