@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.helloworld.BaseActivity.BaseActivity;
 
-import com.helloworld.BaseModel.ActivityModel;
+import com.helloworld.basemodel.ActivityModel;
 import com.helloworld.Handler.HomeDataHandler;
 import com.helloworld.R;
 import com.helloworld.sections.Home.Model.HomeAdapter;

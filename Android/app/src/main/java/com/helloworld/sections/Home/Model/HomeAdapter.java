@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.helloworld.BaseModel.ActivityModel;
+import com.helloworld.basemodel.ActivityModel;
 import com.helloworld.R;
 
 

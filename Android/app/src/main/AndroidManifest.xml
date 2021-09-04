@@ -5,10 +5,9 @@
     android:versionName="1.0">
     <!-- - 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- - 网络状态 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!--   SD 卡访问权限  -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- SD 卡访问权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".myApplication.MyApplication"
@@ -16,10 +15,13 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:requestLegacyExternalStorage="true"
         android:theme="@style/Theme.HelloWorld">
+        <activity
+            android:name=".sections.database.room.RoomActivity"
+            android:exported="true" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -29,7 +31,6 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/image_file_paths" />
-
         </provider>
 
         <activity
@@ -102,7 +103,6 @@
             android:name=".sections.NoficaitonActiviry.Notifaction"
             android:exported="true" />
         <activity android:name=".sections.ListView.ListViewActivity" />
-
         <activity
             android:name=".sections.Home.Activity.HomeActivity"
             android:launchMode="singleTop"> <!-- launchmodel : singletop,如果在栈顶则不会新创建，否则还是会创建； singleTask，如果栈里有该对象，则会将它上边的activity全部弹出，singleInstance，单例，会另外启动一个栈管理，退出次序未知/> -->

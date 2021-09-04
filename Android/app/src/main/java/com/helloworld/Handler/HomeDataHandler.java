@@ -1,7 +1,7 @@
 package com.helloworld.Handler;
 
-import com.helloworld.BaseModel.ActivityModel;
-import com.helloworld.BaseModel.Params;
+import com.helloworld.basemodel.ActivityModel;
+import com.helloworld.basemodel.Params;
 import com.helloworld.sections.Animation.AnimationActivity;
 import com.helloworld.sections.Dialog.DialogActivity;
 import com.helloworld.sections.OKHttp.OKHttpActivity;
@@ -11,6 +11,7 @@ import com.helloworld.sections.audio_video.AudioVideoActivity;
 import com.helloworld.sections.broatCast.BroadCastActivity;
 import com.helloworld.sections.chat.ChatActivity;
 import com.helloworld.sections.database.DataBaseActivity;
+import com.helloworld.sections.database.room.RoomActivity;
 import com.helloworld.sections.fragment.MyFragmentActivity;
 import com.helloworld.sections.NoficaitonActiviry.Notifaction;
 import com.helloworld.sections.ListView.ListViewActivity;
@@ -33,6 +34,7 @@ public class HomeDataHandler {
 
     public List<ActivityModel> homeList() {
 
+        addItemToList(RoomActivity.class, "Room存储", null);
         addItemToList(DataBaseActivity.class, "数据存储", null);
         addItemToList(PhotoActivity.class, "拍照与相片", null);
         addItemToList(AudioVideoActivity.class, "音视频", null);

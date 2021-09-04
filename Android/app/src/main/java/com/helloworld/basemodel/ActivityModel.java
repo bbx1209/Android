@@ -1,4 +1,4 @@
-package com.helloworld.BaseModel;
+package com.helloworld.basemodel;
 
 public class ActivityModel {
 

@@ -2,16 +2,29 @@ package com.helloworld.sections.database.room;
 
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "Book_room")
 public class Book_room {
     @PrimaryKey(autoGenerate = true)
-    private  int id;
-    private  String name;
+    private int id;
+    private String name;
     private String author;
-    private  double price;
+    private double price;
     private int pages;
+
+    public Book_room( String name, String author, double price, int pages) {
+        this.name = name;
+        this.author = author;
+        this.price = price;
+        this.pages = pages;
+    }
+
+    @Ignore
+    public Book_room() {
+
+    }
 
     public int getId() {
         return id;
