@@ -24,8 +24,8 @@
         <Button
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="replay"
-            android:onClick="audioReplay"
+            android:text="stopplay"
+            android:onClick="audioStopplay"
             android:layout_height="match_parent"/>
 
 
