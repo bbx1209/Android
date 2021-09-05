@@ -8,6 +8,10 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 public class MyDBhelper extends SQLiteOpenHelper {
+
+    public  static  final  String  TABLENAME_BOOK = "Book";
+    public  static  final  String  DATABASENAME= "BookStore.db";
+
     
     public  static  final  String  CREATE_TABLE = "create table Book ("
             + "id integer primary key autoincrement,"
