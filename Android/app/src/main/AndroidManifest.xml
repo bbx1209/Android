@@ -3,80 +3,118 @@
     package="com.helloworld"
     android:versionCode="1"
     android:versionName="1.0">
+
     <!-- - 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- - 网络状态 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- SD 卡访问权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".myApplication.MyApplication"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
+        <provider
+            android:name=".sections.contentprovider.MyContentProvider"
+            android:authorities="com.helloworld.provider"
+            android:enabled="true"
+            android:exported="true"></provider>
+
         <activity
-            android:name=".Sections.database.DataBaseActivity"
+            android:name=".sections.contentprovider.ContentProviderActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.chat.ChatActivity"
+            android:name=".sections.database.room.RoomActivity"
+            android:exported="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.helloworld.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/image_file_paths" />
+        </provider>
+
+        <activity
+            android:name=".sections.webview.WebViewActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.glide.GlideActivity"
+            android:name=".sections.service.ServiceActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.broatCast.BroadCastActivity"
+            android:name=".sections.thread.ThreadActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.weChat.WeChatActivity"
+            android:name=".sections.audio_video.AudioVideoActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.ViewPager.ViewPager2Activity"
+            android:name=".sections.Photo.PhotoActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.fragment.MyFragmentActivity"
+            android:name=".sections.database.DataBaseActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.Animation.AnimationActivity"
+            android:name=".sections.chat.ChatActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.ViewPager.ViewPagerActivity"
+            android:name=".sections.glide.GlideActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.Dialog.DialogActivity"
+            android:name=".sections.broatCast.BroadCastActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.Popwindow.PopWindowActivity"
+            android:name=".sections.weChat.WeChatActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.UIElementActivity.UIElementActivity"
+            android:name=".sections.ViewPager.ViewPager2Activity"
             android:exported="true" />
         <activity
-            android:name=".Sections.PassParam.PassParamSecActivity"
+            android:name=".sections.fragment.MyFragmentActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.PassParam.PassParam"
+            android:name=".sections.Animation.AnimationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".sections.ViewPager.ViewPagerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".sections.Dialog.DialogActivity"
+            android:exported="true" />
+        <activity
+            android:name=".sections.popwindow.PopWindowActivity"
+            android:exported="true" />
+        <activity
+            android:name=".sections.uiElementActivity.UIElementActivity"
+            android:exported="true" />
+        <activity
+            android:name=".sections.passparam.PassParamSecActivity"
+            android:exported="true" />
+        <activity
+            android:name=".sections.passparam.PassParam"
             android:exported="true" />
         <activity
             android:name=".BaseActivity.BaseActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.Collection.Activity.CollectionActivity"
+            android:name=".sections.Collection.Activity.CollectionActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.OKHttp.OKHttpActivity"
+            android:name=".sections.OKHttp.OKHttpActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.NoficaitonActiviry.Notifaction"
+            android:name=".sections.NoficaitonActiviry.Notifaction"
             android:exported="true" />
-        <activity android:name=".Sections.ListView.ListViewActivity" />
+        <activity android:name=".sections.ListView.ListViewActivity" />
         <activity
-            android:name=".MainActivity2"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.HelloWorld.NoActionBar" /> <!-- <activity android:name=".Sections.Home.Activity.HomeActivity" -->
-        <!-- android:exported="true"/> -->
-        <activity
-            android:name=".Sections.Home.Activity.HomeActivity"
+            android:name=".sections.Home.Activity.HomeActivity"
             android:launchMode="singleTop"> <!-- launchmodel : singletop,如果在栈顶则不会新创建，否则还是会创建； singleTask，如果栈里有该对象，则会将它上边的activity全部弹出，singleInstance，单例，会另外启动一个栈管理，退出次序未知/> -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -86,7 +124,7 @@
         </activity>
 
         <receiver
-            android:name=".Sections.broatCast.StaticReciver"
+            android:name=".sections.broatCast.StaticReciver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>

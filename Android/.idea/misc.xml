@@ -18,6 +18,7 @@
         <entry key="app/src/main/res/drawable/wo_item.xml" value="0.284375" />
         <entry key="app/src/main/res/layout/activity.xml" value="0.23097826086956522" />
         <entry key="app/src/main/res/layout/activity_animation.xml" value="0.19384057971014493" />
+        <entry key="app/src/main/res/layout/activity_audio_video.xml" value="0.3677536231884058" />
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.12335359675785208" />
         <entry key="app/src/main/res/layout/activity_base2.xml" value="0.1802536231884058" />
         <entry key="app/src/main/res/layout/activity_broad_cast.xml" value="0.3067708333333333" />
@@ -30,6 +31,7 @@
         <entry key="app/src/main/res/layout/activity_pass_param.xml" value="0.24094202898550723" />
         <entry key="app/src/main/res/layout/activity_pass_param_sec.xml" value="0.15217391304347827" />
         <entry key="app/src/main/res/layout/activity_pop_window.xml" value="0.19384057971014493" />
+        <entry key="app/src/main/res/layout/activity_room.xml" value="0.15462962962962962" />
         <entry key="app/src/main/res/layout/activity_uielement.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_view_pager2.xml" value="0.22447916666666667" />
         <entry key="app/src/main/res/layout/activity_we_chat.xml" value="0.245605223505776" />
@@ -45,10 +47,12 @@
         <entry key="app/src/main/res/layout/home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/home_layout.xml" value="0.15806159420289856" />
         <entry key="app/src/main/res/layout/item_view.xml" value="0.2033514492753623" />
+        <entry key="app/src/main/res/layout/layout_path.xml" value="0.23867753623188406" />
         <entry key="app/src/main/res/layout/pager2_item.xml" value="0.26992753623188404" />
         <entry key="app/src/main/res/layout/viewpage_view2.xml" value="0.1983695652173913" />
         <entry key="app/src/main/res/layout/viewpage_view3.xml" value="0.1983695652173913" />
         <entry key="app/src/main/res/layout/wechat_bottom_bar.xml" value="0.2608695652173913" />
+        <entry key="app/src/main/res/xml/file_paths.xml" value="0.23867753623188406" />
       </map>
     </option>
   </component>

@@ -1,23 +1,30 @@
 package com.helloworld.Handler;
 
-import com.helloworld.BaseModel.ActivityModel;
-import com.helloworld.BaseModel.Params;
-import com.helloworld.Sections.Animation.AnimationActivity;
-import com.helloworld.Sections.Dialog.DialogActivity;
-import com.helloworld.Sections.OKHttp.OKHttpActivity;
-import com.helloworld.Sections.ViewPager.ViewPager2Activity;
-import com.helloworld.Sections.broatCast.BroadCastActivity;
-import com.helloworld.Sections.chat.ChatActivity;
-import com.helloworld.Sections.database.DataBaseActivity;
-import com.helloworld.Sections.fragment.MyFragmentActivity;
-import com.helloworld.Sections.NoficaitonActiviry.Notifaction;
-import com.helloworld.Sections.ListView.ListViewActivity;
-import com.helloworld.Sections.PassParam.PassParam;
-import com.helloworld.Sections.Popwindow.PopWindowActivity;
-import com.helloworld.Sections.UIElementActivity.UIElementActivity;
-import com.helloworld.Sections.ViewPager.ViewPagerActivity;
-import com.helloworld.Sections.glide.GlideActivity;
-import com.helloworld.Sections.weChat.WeChatActivity;
+import com.helloworld.basemodel.ActivityModel;
+import com.helloworld.basemodel.Params;
+import com.helloworld.sections.Animation.AnimationActivity;
+import com.helloworld.sections.Dialog.DialogActivity;
+import com.helloworld.sections.OKHttp.OKHttpActivity;
+import com.helloworld.sections.Photo.PhotoActivity;
+import com.helloworld.sections.ViewPager.ViewPager2Activity;
+import com.helloworld.sections.audio_video.AudioVideoActivity;
+import com.helloworld.sections.broatCast.BroadCastActivity;
+import com.helloworld.sections.chat.ChatActivity;
+import com.helloworld.sections.contentprovider.ContentProviderActivity;
+import com.helloworld.sections.database.DataBaseActivity;
+import com.helloworld.sections.database.room.RoomActivity;
+import com.helloworld.sections.fragment.MyFragmentActivity;
+import com.helloworld.sections.NoficaitonActiviry.Notifaction;
+import com.helloworld.sections.ListView.ListViewActivity;
+import com.helloworld.sections.passparam.PassParam;
+import com.helloworld.sections.popwindow.PopWindowActivity;
+import com.helloworld.sections.uiElementActivity.UIElementActivity;
+import com.helloworld.sections.ViewPager.ViewPagerActivity;
+import com.helloworld.sections.glide.GlideActivity;
+import com.helloworld.sections.service.ServiceActivity;
+import com.helloworld.sections.thread.ThreadActivity;
+import com.helloworld.sections.weChat.WeChatActivity;
+import com.helloworld.sections.webview.WebViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,19 +35,28 @@ public class HomeDataHandler {
 
     public List<ActivityModel> homeList() {
 
+        addItemToList(ContentProviderActivity.class, "内容提供器", null);
+
+        addItemToList(RoomActivity.class, "Room存储", null);
         addItemToList(DataBaseActivity.class, "数据存储", null);
+        addItemToList(PhotoActivity.class, "拍照与相片", null);
+        addItemToList(AudioVideoActivity.class, "音视频", null);
+        addItemToList(ThreadActivity.class, "多线程", null);
+        addItemToList(ServiceActivity.class, "服务Service", null);
+        addItemToList(WebViewActivity.class, "webView", null);
 
         addItemToList(ChatActivity.class, "聊天页面", null);
-        ActivityModel model1 = new ActivityModel(Notifaction.class, "通知", null);
-        list.add(model1);
-        ActivityModel model2 = new ActivityModel(ListViewActivity.class, "列表页", null);
-        list.add(model2);
-        ActivityModel model3 = new ActivityModel(PassParam.class, "页面传值", null);
-        list.add(model3);
-        ActivityModel model4 = new ActivityModel(UIElementActivity.class, "UI元素", null);
-        list.add(model4);
-        ActivityModel model5 = new ActivityModel(PopWindowActivity.class, "PopWindow", null);
-        list.add(model5);
+
+        addItemToList(Notifaction.class, "通知", null);
+
+        addItemToList(ListViewActivity.class, "列表页", null);
+
+        addItemToList(PassParam.class, "页面传值", null);
+
+        addItemToList(UIElementActivity.class, "UI元素", null);
+
+        addItemToList(PopWindowActivity.class, "PopWindow", null);
+
         addItemToList(DialogActivity.class, "dialog", null);
         addItemToList(ViewPagerActivity.class, "view pager", null);
         addItemToList(ViewPager2Activity.class, "view pager 2", null);
