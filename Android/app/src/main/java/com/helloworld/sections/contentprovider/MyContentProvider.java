@@ -62,10 +62,10 @@ public class MyContentProvider extends ContentProvider {
         String type = null;
         switch (uriMatcher.match(uri)) {
             case BOOK_DIR:
-                type = VND_PREFIX +".dir"+ VND_SUFFIX + "book";
+                type = VND_PREFIX +".dir"+ VND_SUFFIX + "Book";
                 break;
             case BOOK_ITEM:
-                type = VND_PREFIX +".item"+ VND_SUFFIX + "book";
+                type = VND_PREFIX +".item"+ VND_SUFFIX + "Book";
                 break;
             default:
         }
