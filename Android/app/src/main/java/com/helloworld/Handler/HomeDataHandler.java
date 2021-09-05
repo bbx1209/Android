@@ -10,6 +10,7 @@ import com.helloworld.sections.ViewPager.ViewPager2Activity;
 import com.helloworld.sections.audio_video.AudioVideoActivity;
 import com.helloworld.sections.broatCast.BroadCastActivity;
 import com.helloworld.sections.chat.ChatActivity;
+import com.helloworld.sections.contentprovider.ContentProviderActivity;
 import com.helloworld.sections.database.DataBaseActivity;
 import com.helloworld.sections.database.room.RoomActivity;
 import com.helloworld.sections.fragment.MyFragmentActivity;
@@ -33,6 +34,8 @@ public class HomeDataHandler {
     final List<ActivityModel> list = new ArrayList<>();
 
     public List<ActivityModel> homeList() {
+
+        addItemToList(ContentProviderActivity.class, "内容提供器", null);
 
         addItemToList(RoomActivity.class, "Room存储", null);
         addItemToList(DataBaseActivity.class, "数据存储", null);

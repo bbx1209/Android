@@ -3,6 +3,7 @@
     package="com.helloworld"
     android:versionCode="1"
     android:versionName="1.0">
+
     <!-- - 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- - 网络状态 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- SD 卡访问权限 -->
@@ -19,6 +20,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
+        <provider
+            android:name=".sections.contentprovider.MyContentProvider"
+            android:authorities="com.helloworld.provider"
+            android:enabled="true"
+            android:exported="true"></provider>
+
+        <activity
+            android:name=".sections.contentprovider.ContentProviderActivity"
+            android:exported="true" />
         <activity
             android:name=".sections.database.room.RoomActivity"
             android:exported="true" />
