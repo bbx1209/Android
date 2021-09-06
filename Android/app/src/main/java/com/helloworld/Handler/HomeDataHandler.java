@@ -21,7 +21,7 @@ import com.helloworld.sections.popwindow.PopWindowActivity;
 import com.helloworld.sections.uiElementActivity.UIElementActivity;
 import com.helloworld.sections.ViewPager.ViewPagerActivity;
 import com.helloworld.sections.glide.GlideActivity;
-import com.helloworld.sections.service.ServiceActivity;
+import com.helloworld.Sections.services.ServiceActivity;
 import com.helloworld.sections.thread.ThreadActivity;
 import com.helloworld.sections.weChat.WeChatActivity;
 import com.helloworld.sections.webview.WebViewActivity;

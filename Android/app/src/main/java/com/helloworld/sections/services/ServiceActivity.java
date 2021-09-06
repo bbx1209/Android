@@ -1,4 +1,4 @@
-package com.helloworld.sections.service;
+package com.helloworld.Sections.services;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,6 +33,17 @@ public class ServiceActivity extends AppCompatActivity {
 
     // 解绑
     public void unbindService(View view) {
+
+    }
+
+    // intent service   start
+    public void startIntentService(View view) {
+
+    }
+
+    // intent service   stop
+    public void stopIntentService(View view) {
+
 
     }
 }

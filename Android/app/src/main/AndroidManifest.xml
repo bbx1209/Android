@@ -20,11 +20,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
+        <service
+            android:name=".Sections.services.MyIntentService"
+            android:exported="false"/>
+        <service
+            android:name=".Sections.services.DownService"
+            android:enabled="true"
+            android:exported="true" />
+
         <provider
             android:name=".sections.contentprovider.MyContentProvider"
             android:authorities="com.helloworld.provider"
             android:enabled="true"
-            android:exported="true"></provider>
+            android:exported="true" />
 
         <activity
             android:name=".sections.contentprovider.ContentProviderActivity"
@@ -47,7 +55,7 @@
             android:name=".sections.webview.WebViewActivity"
             android:exported="true" />
         <activity
-            android:name=".sections.service.ServiceActivity"
+            android:name=".Sections.services.ServiceActivity"
             android:exported="true" />
         <activity
             android:name=".sections.thread.ThreadActivity"
