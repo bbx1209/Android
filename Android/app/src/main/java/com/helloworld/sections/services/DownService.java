@@ -1,4 +1,4 @@
-package com.helloworld.Sections.services;
+package com.helloworld.sections.services;
 
 import android.app.Service;
 import android.content.Intent;
@@ -23,7 +23,7 @@ public class DownService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         // TODO: Return the communication channel to the service.
-        Log.d("DownService", "onBind: 服务开启");
+
         return  new IBinder() {
             @Nullable
             @Override
@@ -72,6 +72,12 @@ public class DownService extends Service {
                 return false;
             }
         };
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Log.d("DownService", "onBind: 服务开启");
     }
 
     @Override

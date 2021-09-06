@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.helloworld.R;
+import com.helloworld.sections.services.DownService;
+
+import
 
 public class ServiceActivity extends AppCompatActivity {
 
@@ -27,6 +30,8 @@ public class ServiceActivity extends AppCompatActivity {
 
     //关闭服务
     public void stopService(View view) {
+        Intent service = new Intent(this, DownService.class);
+        stopService(service);
 
     }
 

@@ -24,7 +24,7 @@
             android:name=".Sections.services.MyIntentService"
             android:exported="false"/>
         <service
-            android:name=".Sections.services.DownService"
+            android:name=".sections.services.DownService"
             android:enabled="true"
             android:exported="true" />
 
