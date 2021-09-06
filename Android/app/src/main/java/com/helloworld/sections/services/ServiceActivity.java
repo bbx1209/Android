@@ -2,6 +2,7 @@ package com.helloworld.Sections.services;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -18,6 +19,9 @@ public class ServiceActivity extends AppCompatActivity {
 
     //开启服务
     public void startService(View view) {
+
+        Intent service = new Intent(this, DownService.class);
+        startService(service);
 
     }
 
