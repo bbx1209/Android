@@ -3,6 +3,7 @@ package com.helloworld.Handler;
 import com.helloworld.Sections.materialdesign.MaterialDesignActivity;
 import com.helloworld.basemodel.ActivityModel;
 import com.helloworld.basemodel.Params;
+import com.helloworld.sections.download.DownloadActivity;
 import com.helloworld.sections.recoder.RecoderActivity;
 import com.helloworld.sections.Animation.AnimationActivity;
 import com.helloworld.sections.Dialog.DialogActivity;
@@ -36,6 +37,8 @@ public class HomeDataHandler {
     final List<ActivityModel> list = new ArrayList<>();
 
     public List<ActivityModel> homeList() {
+
+        addItemToList(DownloadActivity.class, "下载", null);
 
         addItemToList(ContentProviderActivity.class, "内容提供器", null);
         addItemToList(RecoderActivity.class, "视频录制", null);
