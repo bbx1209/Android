@@ -1,7 +1,9 @@
 package com.helloworld.Handler;
 
+import com.helloworld.Sections.materialdesign.MaterialDesignActivity;
 import com.helloworld.basemodel.ActivityModel;
 import com.helloworld.basemodel.Params;
+import com.helloworld.recoder.RecoderActivity;
 import com.helloworld.sections.Animation.AnimationActivity;
 import com.helloworld.sections.Dialog.DialogActivity;
 import com.helloworld.sections.OKHttp.OKHttpActivity;
@@ -36,6 +38,8 @@ public class HomeDataHandler {
     public List<ActivityModel> homeList() {
 
         addItemToList(ContentProviderActivity.class, "内容提供器", null);
+        addItemToList(RecoderActivity.class, "视频录制", null);
+        addItemToList(MaterialDesignActivity.class, "MaterialDesign", null);
 
         addItemToList(RoomActivity.class, "Room存储", null);
         addItemToList(DataBaseActivity.class, "数据存储", null);

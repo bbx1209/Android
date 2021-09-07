@@ -3,12 +3,12 @@
     package="com.helloworld"
     android:versionCode="1"
     android:versionName="1.0">
-
     <!-- - 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- - 网络状态 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- SD 卡访问权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:name=".myApplication.MyApplication"
@@ -20,9 +20,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
+        <activity
+            android:name=".Sections.materialdesign.MaterialDesignActivity"
+            android:exported="true" />
+        <activity
+            android:name=".recoder.RecoderActivity"
+            android:exported="true" />
+
         <service
             android:name=".Sections.services.MyIntentService"
-            android:exported="false"/>
+            android:exported="false" />
         <service
             android:name=".sections.services.DownService"
             android:enabled="true"
