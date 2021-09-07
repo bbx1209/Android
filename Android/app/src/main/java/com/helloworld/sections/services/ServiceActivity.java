@@ -9,8 +9,6 @@ import android.view.View;
 import com.helloworld.R;
 import com.helloworld.sections.services.DownService;
 
-import
-
 public class ServiceActivity extends AppCompatActivity {
 
     @Override
