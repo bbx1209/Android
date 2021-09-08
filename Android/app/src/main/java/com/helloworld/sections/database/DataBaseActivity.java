@@ -1,4 +1,4 @@
-package com.helloworld.sections.database;
+package com.helloworld.Sections.database;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.helloworld.R;
+import com.helloworld.Sections.database.MyDBhelper;
 
 
 import java.io.BufferedReader;

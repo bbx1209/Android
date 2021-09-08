@@ -11,6 +11,7 @@ import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
@@ -30,6 +31,11 @@ public class RecoderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recoder);
+
+
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), "/test");
+        String directory = file.getPath();
+        Log.d("+++++++ RecoderActivity", "playAndStopAction:" + directory);
 
         textureView = findViewById(R.id.textureView);
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED
@@ -52,9 +58,11 @@ public class RecoderActivity extends AppCompatActivity {
             mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
             mediaRecorder.setVideoEncoder(MediaRecorder.AudioEncoder.AAC);
             mediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
-//            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), "test.mp4");
-//            String path = file.getPath();
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), "test.mp4");
+            String directory = file.getPath();
 //            mediaRecorder.setOutputFile(path);
+            String path = new File(getExternalFilesDir(""), "text.mp4").getAbsolutePath();
+            Log.d("RecoderActivity", "playAndStopAction:" + path);
             mediaRecorder.setOutputFile(new File(getExternalFilesDir(""), "test.mp4").getAbsolutePath());
             mediaRecorder.setVideoSize(640, 480);
             mediaRecorder.setPreviewDisplay(new Surface(textureView.getSurfaceTexture()));
@@ -63,7 +71,7 @@ public class RecoderActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            mediaRecorder.start();
+//            mediaRecorder.start();
 
         } else {
             //停止

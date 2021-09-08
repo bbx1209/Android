@@ -78,7 +78,7 @@
             android:name=".sections.Photo.PhotoActivity"
             android:exported="true" />
         <activity
-            android:name=".sections.database.DataBaseActivity"
+            android:name=".Sections.database.DataBaseActivity"
             android:exported="true" />
         <activity
             android:name=".sections.chat.ChatActivity"

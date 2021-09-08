@@ -7,7 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 
-import com.helloworld.sections.database.MyDBhelper;
+import com.helloworld.Sections.database.MyDBhelper;
 
 public class MyContentProvider extends ContentProvider {
 

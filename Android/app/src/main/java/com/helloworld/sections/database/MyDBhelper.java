@@ -1,4 +1,4 @@
-package com.helloworld.sections.database;
+package com.helloworld.Sections.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
