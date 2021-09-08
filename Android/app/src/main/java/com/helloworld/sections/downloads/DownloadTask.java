@@ -1,4 +1,4 @@
-package com.helloworld.sections.download;
+package com.helloworld.Sections.downloads;
 
 import android.os.AsyncTask;
 import android.os.Environment;
@@ -7,9 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
-import java.util.IdentityHashMap;
 
-import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;

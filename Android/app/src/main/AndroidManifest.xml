@@ -22,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity
-            android:name=".sections.download.DownloadActivity"
+            android:name="com.helloworld.sections.downloads.DownloadActivity"
             android:exported="true" />
         <activity
             android:name=".Sections.materialdesign.MaterialDesignActivity"
@@ -38,6 +38,10 @@
             android:name=".sections.services.DownService"
             android:enabled="true"
             android:exported="true" />
+
+        <service android:name=".Sections.downloads.DownloadService"
+            android:enabled="true"
+            android:exported="true"/>
 
         <provider
             android:name=".sections.contentprovider.MyContentProvider"

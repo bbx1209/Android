@@ -3,7 +3,7 @@ package com.helloworld.Handler;
 import com.helloworld.Sections.materialdesign.MaterialDesignActivity;
 import com.helloworld.basemodel.ActivityModel;
 import com.helloworld.basemodel.Params;
-import com.helloworld.sections.download.DownloadActivity;
+import com.helloworld.sections.downloads.DownloadActivity;
 import com.helloworld.sections.recoder.RecoderActivity;
 import com.helloworld.sections.Animation.AnimationActivity;
 import com.helloworld.sections.Dialog.DialogActivity;

@@ -1,4 +1,4 @@
-package com.helloworld.sections.download;
+package com.helloworld.sections.downloads;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.helloworld.R;
+import com.helloworld.Sections.downloads.DownloadService;
 
 public class DownloadActivity extends AppCompatActivity {
 
