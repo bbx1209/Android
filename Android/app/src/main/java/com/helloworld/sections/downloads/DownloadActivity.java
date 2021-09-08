@@ -31,7 +31,7 @@ public class DownloadActivity extends AppCompatActivity {
         public void onServiceDisconnected(ComponentName name) {
 
         }
-    }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
