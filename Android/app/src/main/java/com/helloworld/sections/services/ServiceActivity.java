@@ -1,11 +1,13 @@
-package com.helloworld.sections.service;
+package com.helloworld.Sections.services;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.helloworld.R;
+import com.helloworld.sections.services.DownService;
 
 public class ServiceActivity extends AppCompatActivity {
 
@@ -19,10 +21,15 @@ public class ServiceActivity extends AppCompatActivity {
     //开启服务
     public void startService(View view) {
 
+        Intent service = new Intent(this, DownService.class);
+        startService(service);
+
     }
 
     //关闭服务
     public void stopService(View view) {
+        Intent service = new Intent(this, DownService.class);
+        stopService(service);
 
     }
 
@@ -33,6 +40,17 @@ public class ServiceActivity extends AppCompatActivity {
 
     // 解绑
     public void unbindService(View view) {
+
+    }
+
+    // intent service   start
+    public void startIntentService(View view) {
+
+    }
+
+    // intent service   stop
+    public void stopIntentService(View view) {
+
 
     }
 }

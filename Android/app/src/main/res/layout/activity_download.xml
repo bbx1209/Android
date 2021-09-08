@@ -4,35 +4,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
-
     <Button
-        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:text="inser book"
-        android:onClick="inserABook"
+        android:text="start load"
+        android:onClick="startLoad"
         />
     <Button
-        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:text="update book"
-        android:onClick="updateBook"
+        android:text="pause load"
+        android:onClick="pauseLoad"
         />
     <Button
-        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:text="delete book"
-        android:onClick="deleteBook"
-        />
-    <Button
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:text="query book"
-        android:onClick="queryBook"
+        android:text="cancel load"
+        android:onClick="cancelLoad"
         />
 
 </LinearLayout>

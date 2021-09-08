@@ -55,7 +55,6 @@ public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("+++++++ ", "onClick:");
                 String name = viewHolder.textView.getText().toString();
                 Toast.makeText(view.getContext(), name, Toast.LENGTH_SHORT).show();
 
@@ -76,14 +75,12 @@ public class HomeAdapter extends RecyclerView.Adapter <HomeAdapter.ViewHolder>  
         ActivityModel model = itemList.get(position);
 
         holder.textView.setText(model.getMainTitle());
-        Log.e("+++++++ ", "onBindViewHolder:");
 
     }
 
     @Override
     public int getItemCount() {
         int count = itemList.size();
-        Log.e("adaptor", "getItemCount:"+ count );
         return count;
     }
 

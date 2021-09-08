@@ -7,7 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 
-import com.helloworld.sections.database.MyDBhelper;
+import com.helloworld.Sections.database.MyDBhelper;
 
 public class MyContentProvider extends ContentProvider {
 
@@ -62,10 +62,10 @@ public class MyContentProvider extends ContentProvider {
         String type = null;
         switch (uriMatcher.match(uri)) {
             case BOOK_DIR:
-                type = VND_PREFIX +".dir"+ VND_SUFFIX + "book";
+                type = VND_PREFIX +".dir"+ VND_SUFFIX + "Book";
                 break;
             case BOOK_ITEM:
-                type = VND_PREFIX +".item"+ VND_SUFFIX + "book";
+                type = VND_PREFIX +".item"+ VND_SUFFIX + "Book";
                 break;
             default:
         }

@@ -1,40 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:text="start service"
         android:onClick="startService"
-        />
+        android:text="start service" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:text="stop service"
         android:onClick="stopService"
-        />
+        android:text="stop service" />
 
     <Spinner
         android:layout_width="match_parent"
-        android:background="@color/black"
-        android:layout_height="2dp"/>
+        android:layout_height="2dp"
+        android:background="@color/black" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:text="bind service"
         android:onClick="bindService"
-        />
+        android:text="bind service" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:text="unbind service"
         android:onClick="unbindService"
-        />
+        android:text="unbind service" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:onClick="startIntentService"
+        android:text="start intent service" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:onClick="stopIntentService"
+        android:text="stop intent service" />
 
 
 </LinearLayout>
