@@ -16,6 +16,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.helloworld.R;
 
 public class MaterialDesignActivity extends AppCompatActivity {
@@ -99,5 +100,18 @@ public class MaterialDesignActivity extends AppCompatActivity {
             default:
         }
         return  true;
+    }
+
+    public void clickOnFloatingBut(View view) {
+
+        //snackbar
+        Snackbar.make(view, "data delete", Snackbar.LENGTH_SHORT)
+                .setAction("undo", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(MaterialDesignActivity.this, "data restored", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .show();;
     }
 }
