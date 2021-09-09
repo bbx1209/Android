@@ -16,6 +16,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -38,6 +39,7 @@ public class MaterialDesignActivity extends AppCompatActivity {
     };
     private List<CardModel> modelList = new ArrayList<>();
     private  CardViewAdapter adapter;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +95,37 @@ public class MaterialDesignActivity extends AppCompatActivity {
         adapter = new CardViewAdapter(this, modelList);
         recyclerView.setAdapter(adapter);
 
+        //下拉刷新
+        swipeRefreshLayout = findViewById(R.id.refresh_layout);
+//        swipeRefreshLayout.setColorSchemeColors(R.color.purple_200);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshCardModel();
+            }
+        });
+
+    }
+
+    private void refreshCardModel() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        initCardModels();
+                        adapter.notifyDataSetChanged();
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                });
+            }
+        }).start();
     }
 
     private void initCardModels() {
