@@ -57,7 +57,8 @@ public class DataBaseActivity extends AppCompatActivity {
         BufferedWriter writer = null;
 
         try {
-            out = openFileOutput("data", Context.MODE_PRIVATE);
+            //data 为文件名,不嫩包含路径,默认的路径在/data/data/包名/files目录下,  MODE_PRIVATE 为覆盖, MODE_APPEND为向后拼接
+            out = openFileOutput("data.text", Context.MODE_PRIVATE);
             writer = new BufferedWriter(new OutputStreamWriter(out));
             writer.write(data);
         } catch (FileNotFoundException e) {
