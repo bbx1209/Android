@@ -41,6 +41,9 @@ public class MaterialDesignActivity extends AppCompatActivity {
             @SuppressLint("NonConstantResourceId")
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                //取消上一个选中
+                MenuItem checkedItem = navi.getCheckedItem();
+                checkedItem.setChecked(false);
                 switch (item.getItemId()) {
                     case R.id.call:
                         Toast.makeText(MaterialDesignActivity.this, "call", Toast.LENGTH_SHORT).show();
@@ -57,9 +60,11 @@ public class MaterialDesignActivity extends AppCompatActivity {
                     default:
                 }
 
+
+
                 //关闭drawer
                 drawerLayout.closeDrawers();
-                return false;// boolean 标记item 是不是显示选中状态
+                return true;// boolean 标记item 是不是显示选中状态
             }
         });
 
