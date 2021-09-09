@@ -22,12 +22,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity
-            android:name="com.helloworld.sections.downloads.DownloadActivity"
+            android:name=".sections.materialdesign.CardDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".sections.downloads.DownloadActivity"
             android:exported="true" />
         <activity
             android:name=".Sections.materialdesign.MaterialDesignActivity"
-            android:label="MarerialDesign"
-            android:exported="true" />
+            android:exported="true"
+            android:label="MarerialDesign" />
         <activity
             android:name=".sections.recoder.RecoderActivity"
             android:exported="true" />
@@ -39,10 +42,10 @@
             android:name=".sections.services.DownService"
             android:enabled="true"
             android:exported="true" />
-
-        <service android:name=".Sections.downloads.DownloadService"
+        <service
+            android:name=".Sections.downloads.DownloadService"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true" />
 
         <provider
             android:name=".sections.contentprovider.MyContentProvider"
