@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single"> <!-- single  单击 -->
+        <item
+            android:id="@+id/call"
+            android:icon="@drawable/call"
+            android:title="Call" />
+        <item
+            android:id="@+id/friends"
+            android:icon="@drawable/friends"
+            android:title="Friends" />
+        <item
+            android:id="@+id/mail"
+            android:icon="@drawable/email"
+            android:title="Mail" />
+        <item
+            android:id="@+id/task"
+            android:icon="@drawable/task"
+            android:title="Task" />
+    </group>
+
+    <group android:checkableBehavior="single"> <!-- single  单击 -->
+        <item
+            android:id="@+id/call2"
+            android:icon="@drawable/call"
+            android:title="Call" />
+    </group>
+
+</menu>
