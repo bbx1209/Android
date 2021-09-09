@@ -14,14 +14,31 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.helloworld.R;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class MaterialDesignActivity extends AppCompatActivity {
 
-        private DrawerLayout drawerLayout;
+    private DrawerLayout drawerLayout;
+
+    private CardModel[] cardModels = {
+            new CardModel("card", R.drawable.image),
+            new CardModel("card", R.drawable.image),
+            new CardModel("card", R.drawable.image),
+            new CardModel("card", R.drawable.image),
+            new CardModel("card", R.drawable.image),
+    };
+    private List<CardModel> modelList = new ArrayList<>();
+    private  CardViewAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,13 +79,29 @@ public class MaterialDesignActivity extends AppCompatActivity {
                 }
 
 
-
                 //关闭drawer
                 drawerLayout.closeDrawers();
                 return true;// boolean 标记item 是不是显示选中状态
             }
         });
 
+        initCardModels();
+
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.card_recyclerview);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        adapter = new CardViewAdapter(this, modelList);
+        recyclerView.setAdapter(adapter);
+
+    }
+
+    private void initCardModels() {
+        modelList.clear();
+        for (int i = 0; i < 50; i++) {
+            Random random = new Random();
+            int index = random.nextInt(cardModels.length);
+            modelList.add(cardModels[index]);
+        }
     }
 
 
@@ -99,7 +132,7 @@ public class MaterialDesignActivity extends AppCompatActivity {
                 break;
             default:
         }
-        return  true;
+        return true;
     }
 
     public void clickOnFloatingBut(View view) {
@@ -112,6 +145,7 @@ public class MaterialDesignActivity extends AppCompatActivity {
                         Toast.makeText(MaterialDesignActivity.this, "data restored", Toast.LENGTH_SHORT).show();
                     }
                 })
-                .show();;
+                .show();
+        ;
     }
 }
