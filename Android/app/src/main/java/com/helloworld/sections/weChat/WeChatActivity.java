@@ -13,6 +13,8 @@ import com.helloworld.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.helloworld.sections.weChat.WechatFragment;
+import com.helloworld.sections.weChat.MyFragmentAdapter;
 
 
 public class WeChatActivity extends AppCompatActivity implements View.OnClickListener {
