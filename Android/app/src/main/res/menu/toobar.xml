@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--showAsAction : -->
+
+<!-- -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/backup"
+        android:title="backup"
+        android:icon="@drawable/backup_24"
+        app:showAsAction="always"/> <!--  永远显示在 toolbar 中,空间不够则不展示-->
+    <item android:id="@+id/delete"
+        android:title="Delete"
+        android:icon="@drawable/delete"
+        app:showAsAction="ifRoom"/> <!--  有空间显示在 toolbar 中,空间不够则展示在菜单里-->
+    <item android:id="@+id/settings"
+        android:title="Settings"
+        app:showAsAction="never"/> <!--  永远展示在菜单里-->
+
+</menu>

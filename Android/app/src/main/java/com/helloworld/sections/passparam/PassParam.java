@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.helloworld.R;
 
+import com.helloworld.sections.passparam.PassParamSecActivity;
 
 public class PassParam extends AppCompatActivity {
 
@@ -21,11 +22,16 @@ public class PassParam extends AppCompatActivity {
 
     public void ClickPushToNextActvity(View view) {
 
-        Intent intent = new Intent(this, PassParamSecActivity.class);
-        intent.putExtra("key", "vaule");
-//        startActivity(intent);
-        //回传参数必须要用这个方法
-        startActivityForResult(intent, 1);
+//        Intent intent = new Intent(this, PassParamSecActivity.class);
+//        intent.putExtra("key", "vaule");
+////        startActivity(intent);
+//        //回传参数必须要用这个方法
+//        startActivityForResult(intent, 1);
+
+
+        Intent intent = PassParamSecActivity.newPPSActivityIntent(PassParam.this, "向下传值", 1000);
+        startActivityForResult(intent, PassParamSecActivity.Activity_Request_code);
+
 
     }
 

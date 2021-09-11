@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import com.helloworld.interfaces.ParamInterface;
 import com.helloworld.R;
+import com.helloworld.sections.fragment.MyFragmentActivity;
 
 
 public class Fragment_blank extends Fragment {

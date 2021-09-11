@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single"> <!-- single  单击 -->
+        <item
+            android:id="@+id/call"
+            android:icon="@drawable/call"
+            android:title="Call" />
+        <item
+            android:id="@+id/friends"
+            android:icon="@drawable/friends"
+            android:title="Friends" />
+        <item
+            android:id="@+id/mail"
+            android:icon="@drawable/email"
+            android:title="Mail" />
+        <item
+            android:id="@+id/task"
+            android:icon="@drawable/task"
+            android:title="Task" />
+    </group>
+
+    <item
+        android:id="@+id/sub_title"
+        android:title="子项目"
+        >
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/mail2"
+                    android:icon="@drawable/email"
+                    android:title="Mail" />
+
+            </group>
+
+            <item android:id="@+id/someid"
+                android:title="刺激标题">
+
+                <menu>
+                    <group android:checkableBehavior="single">
+                        <item
+                            android:id="@+id/task3"
+                            android:icon="@drawable/task"
+                            android:title="Task" />
+                    </group>
+
+
+                </menu>
+
+            </item>
+
+        </menu>
+
+    </item>
+
+</menu>
