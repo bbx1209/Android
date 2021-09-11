@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.helloworld.interfaces.ParamInterface;
 import com.helloworld.R;
+import com.helloworld.sections.fragment.Fragment_red;
+import com.helloworld.sections.fragment.Fragment_blank;
 
 
 public class MyFragmentActivity extends AppCompatActivity implements View.OnClickListener {
