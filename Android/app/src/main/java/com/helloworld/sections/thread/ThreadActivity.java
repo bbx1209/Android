@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.helloworld.R;
 import com.helloworld.sections.thread.MyThread;
+import com.helloworld.sections.thread.MyRunable;
 
 public class ThreadActivity extends AppCompatActivity {
 
@@ -28,5 +29,17 @@ public class ThreadActivity extends AppCompatActivity {
             MyThread myThread = new MyThread();
             myThread.start();
         }
+    }
+
+    public void onClickMyRunable(View view) {
+
+        Log.d(TAG, "onClickMyThread:" + Thread.currentThread().toString() + Thread.currentThread().getId());
+
+        MyRunable myRunable = new MyRunable();
+
+        Thread thread = new Thread(myRunable);
+
+        thread.start();
+
     }
 }
