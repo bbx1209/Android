@@ -43,7 +43,7 @@ public class DownloadService extends Service {
         @Override
         public void onFailed() {
             downloadTask = null;
-            stopForeground(true);
+//            stopForeground(true);
             getNotificationManager().notify(1, getNotification("Download Faild", -1));
             Toast.makeText(DownloadService.this, "Download Faild", Toast.LENGTH_SHORT).show();
 
@@ -59,7 +59,7 @@ public class DownloadService extends Service {
         @Override
         public void onCancel() {
             downloadTask = null;
-            stopForeground(true);
+//            stopForeground(true);
             Toast.makeText(DownloadService.this, "Download Canceld", Toast.LENGTH_SHORT).show();
 
         }
@@ -80,7 +80,7 @@ public class DownloadService extends Service {
                 downloadUrl = url;
                 downloadTask = new DownloadTask(listener);
                 downloadTask.execute(downloadUrl);
-                startForeground(1, getNotification("Downloading ...", 0));
+//                startForeground(1, getNotification("Downloading ...", 0));
                 Toast.makeText(DownloadService.this, "Downloading ...", Toast.LENGTH_SHORT).show();
 
             }
@@ -102,8 +102,8 @@ public class DownloadService extends Service {
                 if (file.exists()) {
                     file.delete();
                 }
-                getNotificationManager().cancel(1);
-                stopForeground(true);
+//                getNotificationManager().cancel(1);
+//                stopForeground(true);
                 Toast.makeText(DownloadService.this, "Canceld", Toast.LENGTH_SHORT).show();
 
 

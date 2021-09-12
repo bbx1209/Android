@@ -46,13 +46,17 @@ public class DownloadActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
         }
 
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.FOREGROUND_SERVICE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.FOREGROUND_SERVICE}, 2);
+        }
+
     }
 
     public void startLoad(View view) {
         if (downloadBinder == null) {
             return;
         }
-        String url = "https://raw.githubusercontent.com/guolindev/eclipse/master/eclipse-int-win64.exe";
+        String url = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic27.nipic.com%2F20130316%2F3710458_103248082000_2.jpg";
         downloadBinder.startDownload(url);
 
     }
@@ -78,6 +82,8 @@ public class DownloadActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case 1:
+                break;
+            case 2:
                 break;
             default:
         }

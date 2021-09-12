@@ -4,6 +4,7 @@ import com.helloworld.Sections.materialdesign.MaterialDesignActivity;
 import com.helloworld.basemodel.ActivityModel;
 import com.helloworld.basemodel.Params;
 import com.helloworld.sections.downloads.DownloadActivity;
+import com.helloworld.sections.recoder.AudioRecoderActivity;
 import com.helloworld.sections.recoder.RecoderActivity;
 import com.helloworld.sections.Animation.AnimationActivity;
 import com.helloworld.sections.Dialog.DialogActivity;
@@ -42,6 +43,7 @@ public class HomeDataHandler {
 
         addItemToList(ContentProviderActivity.class, "内容提供器", null);
         addItemToList(RecoderActivity.class, "视频录制", null);
+        addItemToList(AudioRecoderActivity.class, "语音录制", null);
         addItemToList(MaterialDesignActivity.class, "MaterialDesign", null);
 
         addItemToList(RoomActivity.class, "Room存储", null);
