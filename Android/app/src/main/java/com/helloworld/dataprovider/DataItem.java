@@ -8,6 +8,7 @@ public class DataItem {
     private String subTitle;
     private String description;
     private String imageUrl;
+    private int localImage;
     private boolean isSelected;
     private int price;
     private Date date;
@@ -24,4 +25,8 @@ public class DataItem {
         this.imageUrl = imageUrl;
     }
 
+    public DataItem(String title, int localImage) {
+        this.title = title;
+        this.localImage = localImage;
+    }
 }
