@@ -2,6 +2,7 @@ package com.helloworld.Sections.downloads;
 
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.util.Log;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +12,8 @@ import java.io.RandomAccessFile;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
+import com.helloworld.Sections.downloads.DownloadListener;
 
 public class DownloadTask extends AsyncTask<String, Integer, Integer> {
     public static final int TYPE_SUCCESS = 0;
@@ -58,7 +61,9 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
             Response response = client.newCall(request).execute();
             if (response != null) {
                 is = response.body().byteStream();
-                saveFile.seek(downloadLenth);
+                if (downloadLenth != 0) {
+                    saveFile.seek(downloadLenth);
+                }
                 byte[] b = new byte[1024];
                 int total = 0;
                 int len;
@@ -81,7 +86,8 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
+            Log.d("======down load faild", "doInBackground: ");
         } finally {
             try {
                 if (is != null) {

@@ -3,10 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../../../layout/custom_preview.xml" value="0.25462962962962965" />
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.209375" />
         <entry key="../../../../../layout/custom_preview.xml" value="0.18796296296296297" />
         <entry key="app/src/main/res/drawable/alpha.xml" value="0.29583333333333334" />
-        <entry key="app/src/main/res/drawable/backup.xml" value="0.26851851851851855" />
         <entry key="app/src/main/res/drawable/button_selector.xml" value="0.5216065073716319" />
         <entry key="app/src/main/res/drawable/chat_item.xml" value="0.4010416666666667" />
         <entry key="app/src/main/res/drawable/contact_item.xml" value="0.284375" />
@@ -24,13 +23,14 @@
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.12335359675785208" />
         <entry key="app/src/main/res/layout/activity_base2.xml" value="0.1802536231884058" />
         <entry key="app/src/main/res/layout/activity_broad_cast.xml" value="0.3067708333333333" />
+        <entry key="app/src/main/res/layout/activity_card_detail.xml" value="0.32971014492753625" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.33061594202898553" />
         <entry key="app/src/main/res/layout/activity_data_base.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_download.xml" value="0.2749094202898551" />
         <entry key="app/src/main/res/layout/activity_fragment.xml" value="0.20742753623188406" />
         <entry key="app/src/main/res/layout/activity_glide.xml" value="0.3378623188405797" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2441123188405797" />
-        <entry key="app/src/main/res/layout/activity_material_design.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_material_design.xml" value="0.20878623188405798" />
         <entry key="app/src/main/res/layout/activity_okhttp.xml" value="0.22327898550724637" />
         <entry key="app/src/main/res/layout/activity_pass_param.xml" value="0.24094202898550723" />
         <entry key="app/src/main/res/layout/activity_pass_param_sec.xml" value="0.15217391304347827" />
@@ -38,11 +38,11 @@
         <entry key="app/src/main/res/layout/activity_pop_window.xml" value="0.19384057971014493" />
         <entry key="app/src/main/res/layout/activity_recoder.xml" value="0.20878623188405798" />
         <entry key="app/src/main/res/layout/activity_service.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_thread.xml" value="0.35507246376811596" />
         <entry key="app/src/main/res/layout/activity_uielement.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_view_pager2.xml" value="0.22447916666666667" />
         <entry key="app/src/main/res/layout/activity_we_chat.xml" value="0.245605223505776" />
         <entry key="app/src/main/res/layout/activity_web_view.xml" value="0.18206521739130435" />
-        <entry key="app/src/main/res/layout/card_view_layout.xml" value="0.18614130434782608" />
         <entry key="app/src/main/res/layout/collection.xml" value="0.16983695652173914" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.192481884057971" />
         <entry key="app/src/main/res/layout/fragment_home_item.xml" value="0.2033514492753623" />
@@ -50,19 +50,15 @@
         <entry key="app/src/main/res/layout/fragment_item2_list.xml" value="0.20742753623188406" />
         <entry key="app/src/main/res/layout/fragment_item_list.xml" value="0.17083333333333334" />
         <entry key="app/src/main/res/layout/fragment_navigation_bar.xml" value="0.15932117527862208" />
-        <entry key="app/src/main/res/layout/fragment_pass_param.xml" value="0.1802536231884058" />
         <entry key="app/src/main/res/layout/fragment_red.xml" value="0.20742753623188406" />
         <entry key="app/src/main/res/layout/fragment_wechat.xml" value="0.3378623188405797" />
         <entry key="app/src/main/res/layout/home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/home_layout.xml" value="0.15806159420289856" />
         <entry key="app/src/main/res/layout/item_view.xml" value="0.2033514492753623" />
-        <entry key="app/src/main/res/layout/nav_header.xml" value="0.19202898550724637" />
         <entry key="app/src/main/res/layout/pager2_item.xml" value="0.26992753623188404" />
         <entry key="app/src/main/res/layout/viewpage_view2.xml" value="0.1983695652173913" />
         <entry key="app/src/main/res/layout/viewpage_view3.xml" value="0.1983695652173913" />
         <entry key="app/src/main/res/layout/wechat_bottom_bar.xml" value="0.2608695652173913" />
-        <entry key="app/src/main/res/menu/nav_menu.xml" value="0.31979166666666664" />
-        <entry key="app/src/main/res/menu/toobar.xml" value="0.24427083333333333" />
         <entry key="app/src/main/res/xml/litepal.xml" value="0.2033514492753623" />
       </map>
     </option>

@@ -6,4 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".sections.thread.ThreadActivity">
 
+    <Button
+        android:id="@+id/mythreadBut"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        android:text="Mythread"
+        android:onClick="onClickMyThread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <Button
+        android:id="@+id/myrunableBut"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        android:text="runable"
+        android:onClick="onClickMyRunable"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mythreadBut"
+
+        />
+    <Button
+        android:id="@+id/callableBut"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        android:text="callable"
+        android:onClick="onClickCallable"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/myrunableBut"
+
+        />
+    <Button
+        android:id="@+id/startThread"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        android:text="startThread"
+        android:onClick="startAnewThread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/callableBut"
+
+        />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
