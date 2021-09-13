@@ -12,17 +12,17 @@
         android:id="@+id/collec_image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxHeight="70dp"
-        android:maxWidth="70dp"
-        android:adjustViewBounds="true"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="25dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="70dp"
+        android:maxHeight="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-       />
+        app:srcCompat="@drawable/mao" />
 
     <TextView
         android:id="@+id/collec_text_view"
