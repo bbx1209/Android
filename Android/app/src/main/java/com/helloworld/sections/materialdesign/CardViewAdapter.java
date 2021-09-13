@@ -1,4 +1,4 @@
-package com.helloworld.Sections.materialdesign;
+package com.helloworld.sections.materialdesign;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,8 +15,6 @@ import com.bumptech.glide.Glide;
 import com.helloworld.R;
 
 import java.util.List;
-import com.helloworld.Sections.materialdesign.CardModel;
-import com.helloworld.sections.materialdesign.CardDetailActivity;
 
 public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHolder> {
 

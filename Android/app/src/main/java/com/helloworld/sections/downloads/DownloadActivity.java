@@ -15,8 +15,7 @@ import android.os.IBinder;
 import android.view.View;
 
 import com.helloworld.R;
-import com.helloworld.Sections.downloads.DownloadService;
-import com.helloworld.Sections.downloads.DownloadService.DownloadBinder;
+import com.helloworld.sections.downloads.DownloadService.DownloadBinder;
 
 public class DownloadActivity extends AppCompatActivity {
 

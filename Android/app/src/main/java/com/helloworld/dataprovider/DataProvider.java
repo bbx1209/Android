@@ -23,7 +23,6 @@ public class DataProvider {
 
 
     public static List<DataItem> getDataItems() {
-
         return mList;
     }
 

@@ -1,4 +1,4 @@
-package com.helloworld.Sections.passparam;
+package com.helloworld.sections.passparam;
 
 import android.os.Parcel;
 import android.os.Parcelable;

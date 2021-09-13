@@ -1,4 +1,4 @@
-package com.helloworld.Sections.services;
+package com.helloworld.sections.services;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.helloworld.R;
-import com.helloworld.sections.services.DownService;
 
 public class ServiceActivity extends AppCompatActivity {
 

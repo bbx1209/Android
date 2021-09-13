@@ -1,4 +1,4 @@
-package com.helloworld.Sections.materialdesign;
+package com.helloworld.sections.materialdesign;
 
 public class CardModel {
 

@@ -1,4 +1,4 @@
-package com.helloworld.Sections.downloads;
+package com.helloworld.sections.downloads;
 
 import android.os.AsyncTask;
 import android.os.Environment;
@@ -12,8 +12,6 @@ import java.io.RandomAccessFile;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
-import com.helloworld.Sections.downloads.DownloadListener;
 
 public class DownloadTask extends AsyncTask<String, Integer, Integer> {
     public static final int TYPE_SUCCESS = 0;

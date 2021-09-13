@@ -1,4 +1,4 @@
-package com.helloworld.Sections.materialdesign;
+package com.helloworld.sections.materialdesign;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -25,8 +25,6 @@ import com.helloworld.R;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import com.helloworld.Sections.materialdesign.CardModel;
-import com.helloworld.Sections.materialdesign.CardViewAdapter;
 
 
 public class MaterialDesignActivity extends AppCompatActivity {
@@ -41,7 +39,7 @@ public class MaterialDesignActivity extends AppCompatActivity {
             new CardModel("card", R.drawable.image),
     };
     private List<CardModel> modelList = new ArrayList<>();
-    private com.helloworld.Sections.materialdesign.CardViewAdapter adapter;
+    private com.helloworld.sections.materialdesign.CardViewAdapter adapter;
     private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
