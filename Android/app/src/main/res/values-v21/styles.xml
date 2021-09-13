@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-<!--    -->
-<!--    <style name="CardViewTheme" parent="@a">-->
-<!--        -->
-<!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
-<!--    </style>-->
+<resources >
+
+    <style name="CardViewTheme" >
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
 
 
 </resources>

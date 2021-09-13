@@ -32,7 +32,7 @@
             android:name=".sections.downloads.DownloadActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.materialdesign.MaterialDesignActivity"
+            android:name=".sections.materialdesign.MaterialDesignActivity"
             android:exported="true"
             android:label="MarerialDesign" />
         <activity
@@ -40,14 +40,14 @@
             android:exported="true" />
 
         <service
-            android:name=".Sections.services.MyIntentService"
+            android:name=".sections.services.MyIntentService"
             android:exported="false" />
         <service
             android:name=".sections.services.DownService"
             android:enabled="true"
             android:exported="true" />
         <service
-            android:name=".Sections.downloads.DownloadService"
+            android:name=".sections.downloads.DownloadService"
             android:enabled="true"
             android:exported="true" />
 
@@ -78,7 +78,7 @@
             android:name=".sections.webview.WebViewActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.services.ServiceActivity"
+            android:name=".sections.services.ServiceActivity"
             android:exported="true" />
         <activity
             android:name=".sections.thread.ThreadActivity"
@@ -90,7 +90,7 @@
             android:name=".sections.Photo.PhotoActivity"
             android:exported="true" />
         <activity
-            android:name=".Sections.database.DataBaseActivity"
+            android:name=".sections.database.DataBaseActivity"
             android:exported="true" />
         <activity
             android:name=".sections.chat.ChatActivity"

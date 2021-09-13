@@ -1,4 +1,4 @@
-package com.helloworld.Sections.services;
+package com.helloworld.sections.services;
 
 import android.app.IntentService;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package com.helloworld.Sections.downloads;
+package com.helloworld.sections.downloads;
 
 public interface DownloadListener {
 

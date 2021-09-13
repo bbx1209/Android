@@ -6,7 +6,10 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
+import android.hardware.Camera;
+import android.hardware.camera2.CameraManager;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
@@ -21,11 +24,13 @@ import com.helloworld.R;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
 public class RecoderActivity extends AppCompatActivity {
 
     private TextureView textureView;
     private MediaRecorder mediaRecorder;
+    private  Camera camera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +43,14 @@ public class RecoderActivity extends AppCompatActivity {
         Log.d("+++++++ RecoderActivity", "playAndStopAction:" + directory);
 
         textureView = findViewById(R.id.textureView);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED
-                || ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED
+//                || ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new  String[]{Manifest.permission.RECORD_AUDIO,Manifest.permission.CAMERA}, 1);
-        }
+//        }
 
     }
 
+    @SuppressLint("WrongConstant")
     public void playAndStopAction(View view) {
 
         Button but = (Button) view;
@@ -52,18 +58,26 @@ public class RecoderActivity extends AppCompatActivity {
         if (TextUtils.equals(text, "录制")) {
             //录制
             but.setText("停止");
+
+
+            camera = Camera.open();
+            camera.setDisplayOrientation(90);
+            camera.unlock();
+
             mediaRecorder = new MediaRecorder();
+            mediaRecorder.setCamera(camera);
             mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
             mediaRecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
             mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
-            mediaRecorder.setVideoEncoder(MediaRecorder.AudioEncoder.AAC);
+            mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
             mediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
-            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), "test.mp4");
-            String directory = file.getPath();
-//            mediaRecorder.setOutputFile(path);
-            String path = new File(getExternalFilesDir(""), "text.mp4").getAbsolutePath();
-            Log.d("RecoderActivity", "playAndStopAction:" + path);
-            mediaRecorder.setOutputFile(new File(getExternalFilesDir(""), "test.mp4").getAbsolutePath());
+            mediaRecorder.setOrientationHint(90);
+
+            long time = new Date().getTime();
+            String fileName = time+ ".mp4";
+            String path = new File(getExternalFilesDir(""), fileName).getAbsolutePath();
+            Log.d("RecoderActivity", "playAndStopAction======" + path);
+            mediaRecorder.setOutputFile(path);
             mediaRecorder.setVideoSize(640, 480);
             mediaRecorder.setPreviewDisplay(new Surface(textureView.getSurfaceTexture()));
             try {
@@ -71,7 +85,7 @@ public class RecoderActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-//            mediaRecorder.start();
+            mediaRecorder.start();
 
         } else {
             //停止
@@ -81,6 +95,8 @@ public class RecoderActivity extends AppCompatActivity {
             mediaRecorder.stop();
             mediaRecorder.release();
             mediaRecorder = null;
+            camera.stopPreview();
+            camera.release();
         }
 
     }

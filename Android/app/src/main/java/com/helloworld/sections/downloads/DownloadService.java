@@ -1,4 +1,4 @@
-package com.helloworld.Sections.downloads;
+package com.helloworld.sections.downloads;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -12,10 +12,6 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
-
-import com.helloworld.Sections.downloads.DownloadListener;
-import com.helloworld.Sections.downloads.DownloadTask;
-import com.helloworld.sections.downloads.DownloadActivity;
 
 import java.io.File;
 

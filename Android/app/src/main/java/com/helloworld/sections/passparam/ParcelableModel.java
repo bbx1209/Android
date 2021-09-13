@@ -1,14 +1,10 @@
-package com.helloworld.Sections.passparam;
+package com.helloworld.sections.passparam;
 
-import android.app.LauncherActivity;
-import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.helloworld.Sections.passparam.ListItem;
 
 public class ParcelableModel implements Parcelable {
     private String name;
