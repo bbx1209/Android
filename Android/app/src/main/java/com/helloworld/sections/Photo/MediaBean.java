@@ -7,15 +7,24 @@ public class MediaBean {
 
     public  int type;
     public  String path;
-    public  int size;
+    public  long size;
     public  String displayName;
+    public  String thumbPath;
+    public  int duration;
 
-    public MediaBean(int type, String path, int size, String displayName) {
+    public MediaBean(int type, String path, long size, String displayName) {
         this.type = type;
         this.path = path;
         this.size = size;
         this.displayName = displayName;
     }
 
-
+    public MediaBean(int type, String path, String thumbPath, int duration,long size,String displayName) {
+        this.type = type;
+        this.path = path;
+        this.displayName = displayName;
+        this.thumbPath = thumbPath;
+        this.duration = duration;
+        this.size = size;
+    }
 }
