@@ -1,6 +1,8 @@
 package com.helloworld.sections.Photo;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +18,17 @@ import java.util.List;
 
 public class AlbumAdapter extends RecyclerView.Adapter {
 
-    private Context mContext;
-    private List mList;
+    private final Context mContext;
+    private List<MediaBean> mList;
 
-    public AlbumAdapter(Context mContext, List mList) {
+    public AlbumAdapter(Context mContext, List<MediaBean> mList) {
         this.mContext = mContext;
         this.mList = mList;
+    }
+
+    public void setmList(List<MediaBean> mList) {
+        this.mList = mList;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -35,6 +42,13 @@ public class AlbumAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
+        MediaBean bean = mList.get(position);
+
+        if (holder instanceof  ViewHolder) {
+            ViewHolder viewHolder = (ViewHolder) holder;
+            Bitmap bitmap = BitmapFactory.decodeFile(bean.path);
+            viewHolder.imageView.setImageBitmap(bitmap);
+        }
 
     }
 
