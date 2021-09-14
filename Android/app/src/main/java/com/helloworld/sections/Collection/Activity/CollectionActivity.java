@@ -10,6 +10,7 @@ import com.helloworld.R;
 import com.helloworld.dataprovider.DataItem;
 import com.helloworld.dataprovider.DataProvider;
 import com.helloworld.sections.Collection.Activity.Model.CollectionAdapter;
+import com.helloworld.sections.Collection.Activity.Model.CollectionItemDivider;
 
 import java.util.List;
 
@@ -34,6 +35,8 @@ public class CollectionActivity extends BaseActivity {
 
         mRecyclerView.setAdapter(adapter);
 
+        CollectionItemDivider itemDivider = new CollectionItemDivider(this, CollectionItemDivider.VERTICAL_LIST);
+        mRecyclerView.addItemDecoration(itemDivider);
 
 
     }
