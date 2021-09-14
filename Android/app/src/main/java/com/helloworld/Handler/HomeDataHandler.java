@@ -1,6 +1,8 @@
 package com.helloworld.Handler;
 
 import com.helloworld.sections.Collection.Activity.CollectionActivity;
+import com.helloworld.sections.Photo.AlbumActivity;
+import com.helloworld.sections.designmodel.DesignModelActivity;
 import com.helloworld.sections.materialdesign.MaterialDesignActivity;
 import com.helloworld.basemodel.ActivityModel;
 import com.helloworld.basemodel.Params;
@@ -40,6 +42,9 @@ public class HomeDataHandler {
 
     public List<ActivityModel> homeList() {
 
+        addItemToList(DesignModelActivity.class, "设计模式", null);
+
+        addItemToList(AlbumActivity.class, "相册", null);
         addItemToList(CollectionActivity.class, "CollectionView", null);
         addItemToList(DownloadActivity.class, "下载", null);
 

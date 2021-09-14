@@ -30,7 +30,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
 
     @Override
     protected Integer doInBackground(String... strings) {
-
+        Log.d("=====DownloadTask=====", "doInBackground: " + Thread.currentThread().toString());
         InputStream is = null;
         RandomAccessFile saveFile = null;
         File file = null;

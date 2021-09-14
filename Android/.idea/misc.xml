@@ -18,6 +18,7 @@
         <entry key="app/src/main/res/drawable/walk_animate.xml" value="0.30104166666666665" />
         <entry key="app/src/main/res/drawable/wo_item.xml" value="0.284375" />
         <entry key="app/src/main/res/layout/activity.xml" value="0.23097826086956522" />
+        <entry key="app/src/main/res/layout/activity_album.xml" value="0.1752786220871327" />
         <entry key="app/src/main/res/layout/activity_animation.xml" value="0.19384057971014493" />
         <entry key="app/src/main/res/layout/activity_audio_video.xml" value="0.18206521739130435" />
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.12335359675785208" />
@@ -43,6 +44,7 @@
         <entry key="app/src/main/res/layout/activity_view_pager2.xml" value="0.22447916666666667" />
         <entry key="app/src/main/res/layout/activity_we_chat.xml" value="0.245605223505776" />
         <entry key="app/src/main/res/layout/activity_web_view.xml" value="0.18206521739130435" />
+        <entry key="app/src/main/res/layout/album_item.xml" value="0.1752786220871327" />
         <entry key="app/src/main/res/layout/collection.xml" value="0.16983695652173914" />
         <entry key="app/src/main/res/layout/collection_item_vertical.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.192481884057971" />
