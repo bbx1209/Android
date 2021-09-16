@@ -18,6 +18,11 @@ import com.helloworld.sections.designmodel.factory.HpComputer;
 import com.helloworld.sections.designmodel.makeup.HongQiGong;
 import com.helloworld.sections.designmodel.makeup.OuYangfeng;
 import com.helloworld.sections.designmodel.makeup.YangGuo;
+import com.helloworld.sections.designmodel.shareone.GoodFactory;
+import com.helloworld.sections.designmodel.shareone.Goods;
+import com.helloworld.sections.designmodel.strategy.CommonRivalStrategy;
+import com.helloworld.sections.designmodel.strategy.StrategyContext;
+import com.helloworld.sections.designmodel.strategy.WeakRivalStrategy;
 
 import java.lang.reflect.Proxy;
 
@@ -103,4 +108,26 @@ public class DesignModelActivity extends AppCompatActivity {
         zhangWuji.QianKun();
 
     }
+
+    public void shareAction(View view) {
+        Goods goods = GoodFactory.getGoods("iPhone12");
+        goods.showGoodPrice("32G");
+        Goods goods = GoodFactory.getGoods("iPhone12");
+        goods.showGoodPrice("128G");
+
+    }
+
+    public void strategyAction(View view) {
+        StrategyContext context;
+        context= new StrategyContext(new WeakRivalStrategy());
+        context.fighting();
+
+        context = new StrategyContext(new CommonRivalStrategy());
+        context.fighting();
+
+
+
+    }
+
+
 }
