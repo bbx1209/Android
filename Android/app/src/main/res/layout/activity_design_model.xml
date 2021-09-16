@@ -113,5 +113,47 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/makeup_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/delegate_layout">
+
+        <Button
+            android:id="@+id/makeup_but"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:onClick="makeupAction"
+            android:text="makeup" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/facemode_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/makeup_layout">
+
+        <Button
+            android:id="@+id/facemode_but"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:onClick="facemodeAction"
+            android:text="facemode" />
+
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

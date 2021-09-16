@@ -12,8 +12,12 @@ import com.helloworld.sections.designmodel.delegate.DynamicPurchasing;
 import com.helloworld.sections.designmodel.delegate.IShop;
 import com.helloworld.sections.designmodel.delegate.Me;
 import com.helloworld.sections.designmodel.delegate.Purchasing;
+import com.helloworld.sections.designmodel.facemode.ZhangWuji;
 import com.helloworld.sections.designmodel.factory.GDComputerFactory;
 import com.helloworld.sections.designmodel.factory.HpComputer;
+import com.helloworld.sections.designmodel.makeup.HongQiGong;
+import com.helloworld.sections.designmodel.makeup.OuYangfeng;
+import com.helloworld.sections.designmodel.makeup.YangGuo;
 
 import java.lang.reflect.Proxy;
 
@@ -78,5 +82,25 @@ public class DesignModelActivity extends AppCompatActivity {
                 break;
             default:
         }
+    }
+
+    public void makeupAction(View view) {
+
+        YangGuo yangGuo = new YangGuo();
+
+        HongQiGong hongQiGong = new HongQiGong(yangGuo);
+        hongQiGong.attackMagic();
+
+        OuYangfeng ouYangfeng = new OuYangfeng(yangGuo);
+        ouYangfeng.attackMagic();
+
+    }
+
+    public void facemodeAction(View view) {
+
+        ZhangWuji zhangWuji = new ZhangWuji();
+        zhangWuji.taiji();
+        zhangWuji.QianKun();
+
     }
 }
