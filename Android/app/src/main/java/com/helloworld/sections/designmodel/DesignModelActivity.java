@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.helloworld.R;
+import com.helloworld.sections.designmodel.factory.GDComputerFactory;
+import com.helloworld.sections.designmodel.factory.HpComputer;
 
 public class DesignModelActivity extends AppCompatActivity {
 
@@ -34,6 +36,10 @@ public class DesignModelActivity extends AppCompatActivity {
             case R.id.factory_simple:
                 break;
             case R.id.factory_nomal:
+                GDComputerFactory factory = new GDComputerFactory();
+                HpComputer computer = factory.createComputer(HpComputer.class);
+                computer.start();;
+
                 break;
             default:
         }
