@@ -14,6 +14,7 @@ public class Factory {
                 break;
             default:
         }
+        return computer;
     }
 
 }
