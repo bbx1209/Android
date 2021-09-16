@@ -12,14 +12,19 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.helloworld.R;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AlbumAdapter extends RecyclerView.Adapter {
 
     private final Context mContext;
     private List<MediaBean> mList;
+
+    private List<ViewHolder> mHolderList = new ArrayList<>();
 
     public AlbumAdapter(Context mContext, List<MediaBean> mList) {
         this.mContext = mContext;
@@ -34,8 +39,12 @@ public class AlbumAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        RecyclerView rc = (RecyclerView)parent;
+
         View view = LayoutInflater.from(mContext).inflate(R.layout.album_item, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
+
         return viewHolder;
     }
 
@@ -47,7 +56,8 @@ public class AlbumAdapter extends RecyclerView.Adapter {
         if (holder instanceof  ViewHolder) {
             ViewHolder viewHolder = (ViewHolder) holder;
             Bitmap bitmap = BitmapFactory.decodeFile(bean.path);
-            viewHolder.imageView.setImageBitmap(bitmap);
+//            viewHolder.imageView.setImageBitmap(bitmap);
+            Glide.with(holder.itemView).load(new File(bean.path)).into(viewHolder.imageView);
         }
 
     }

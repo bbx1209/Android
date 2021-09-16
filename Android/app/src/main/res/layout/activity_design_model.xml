@@ -6,4 +6,62 @@
     android:layout_height="match_parent"
     tools:context=".sections.designmodel.DesignModelActivity">
 
+    <LinearLayout
+        android:id="@+id/singleton_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/singleton"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:onClick="createSingleton"
+            android:text="Singleton" />
+
+        <Button
+            android:id="@+id/singletonII"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:onClick="createSingleton"
+            android:text="SingletonII" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/factory_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/singleton_layout">
+
+        <Button
+            android:id="@+id/factory_simple"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:onClick="createFactory"
+            android:text="simple factory" />
+
+        <Button
+            android:id="@+id/factory_nomal"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:onClick="createFactory"
+            android:text="normal factory" />
+
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
