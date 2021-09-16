@@ -154,6 +154,7 @@
 
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/share_layout"
         android:layout_width="match_parent"
@@ -174,6 +175,7 @@
 
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/strategy_layout"
         android:layout_width="match_parent"
@@ -195,5 +197,47 @@
 
     </LinearLayout>
 
+
+    <LinearLayout
+        android:id="@+id/sample_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strategy_layout">
+
+        <Button
+            android:id="@+id/sample_but"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:onClick="sampleAction"
+            android:text="sample" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/observer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sample_layout">
+
+        <Button
+            android:id="@+id/observer_but"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:onClick="observerAction"
+            android:text="observer" />
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

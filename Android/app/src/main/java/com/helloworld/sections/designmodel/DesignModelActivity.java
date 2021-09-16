@@ -18,6 +18,7 @@ import com.helloworld.sections.designmodel.factory.HpComputer;
 import com.helloworld.sections.designmodel.makeup.HongQiGong;
 import com.helloworld.sections.designmodel.makeup.OuYangfeng;
 import com.helloworld.sections.designmodel.makeup.YangGuo;
+import com.helloworld.sections.designmodel.sample.ZhangSanfeng;
 import com.helloworld.sections.designmodel.shareone.GoodFactory;
 import com.helloworld.sections.designmodel.shareone.Goods;
 import com.helloworld.sections.designmodel.strategy.CommonRivalStrategy;
@@ -112,8 +113,8 @@ public class DesignModelActivity extends AppCompatActivity {
     public void shareAction(View view) {
         Goods goods = GoodFactory.getGoods("iPhone12");
         goods.showGoodPrice("32G");
-        Goods goods = GoodFactory.getGoods("iPhone12");
-        goods.showGoodPrice("128G");
+        Goods goods1 = GoodFactory.getGoods("iPhone12");
+        goods1.showGoodPrice("128G");
 
     }
 
@@ -130,4 +131,14 @@ public class DesignModelActivity extends AppCompatActivity {
     }
 
 
+    public void sampleAction(View view) {
+        ZhangSanfeng zhangSanfeng = new ZhangSanfeng();
+        zhangSanfeng.fighting();
+
+    }
+
+    public void observerAction(View view) {
+
+
+    }
 }
