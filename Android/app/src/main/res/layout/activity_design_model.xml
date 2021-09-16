@@ -82,6 +82,33 @@
             android:text="builder" />
 
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/delegate_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/builder_layout">
+
+        <Button
+            android:id="@+id/static_delegate"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:onClick="delegateAction"
+            android:text="static delegate" />
+
+        <Button
+            android:id="@+id/dynamic_delegate"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:onClick="delegateAction"
+            android:text="dynamic delegate" />
 
 
     </LinearLayout>

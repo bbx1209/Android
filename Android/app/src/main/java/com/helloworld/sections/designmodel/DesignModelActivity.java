@@ -8,8 +8,14 @@ import android.view.View;
 import com.helloworld.R;
 import com.helloworld.sections.designmodel.builder.Director;
 import com.helloworld.sections.designmodel.builder.ProductBuilder;
+import com.helloworld.sections.designmodel.delegate.DynamicPurchasing;
+import com.helloworld.sections.designmodel.delegate.IShop;
+import com.helloworld.sections.designmodel.delegate.Me;
+import com.helloworld.sections.designmodel.delegate.Purchasing;
 import com.helloworld.sections.designmodel.factory.GDComputerFactory;
 import com.helloworld.sections.designmodel.factory.HpComputer;
+
+import java.lang.reflect.Proxy;
 
 public class DesignModelActivity extends AppCompatActivity {
 
@@ -40,7 +46,7 @@ public class DesignModelActivity extends AppCompatActivity {
             case R.id.factory_nomal:
                 GDComputerFactory factory = new GDComputerFactory();
                 HpComputer computer = factory.createComputer(HpComputer.class);
-                computer.start();;
+                computer.start();
 
                 break;
             default:
@@ -53,5 +59,24 @@ public class DesignModelActivity extends AppCompatActivity {
         Director director = new Director(builder);
         director.createProduct("core i7", "4G");
 
+    }
+
+    public void delegateAction(View view) {
+        int view_id = view.getId();
+        switch (view_id) {
+            case R.id.static_delegate:
+                Me me1 = new Me();
+                Purchasing purchasing1 = new Purchasing(me1);
+                purchasing1.buy();
+                break;
+            case R.id.dynamic_delegate:
+                IShop me = new Me();
+                DynamicPurchasing purchasing = new DynamicPurchasing(me);
+                ClassLoader classLoader = me.getClass().getClassLoader();
+                IShop object = (IShop) Proxy.newProxyInstance(classLoader, new Class[]{IShop.class}, purchasing);
+                object.buy();
+                break;
+            default:
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.helloworld.sections.designmodel;
+package com.helloworld.sections.designmodel.singleton;
 
 import android.util.Log;
 
