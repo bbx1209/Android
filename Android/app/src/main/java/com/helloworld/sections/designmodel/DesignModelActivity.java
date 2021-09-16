@@ -18,6 +18,8 @@ import com.helloworld.sections.designmodel.factory.HpComputer;
 import com.helloworld.sections.designmodel.makeup.HongQiGong;
 import com.helloworld.sections.designmodel.makeup.OuYangfeng;
 import com.helloworld.sections.designmodel.makeup.YangGuo;
+import com.helloworld.sections.designmodel.observer.SubscriptionSubject;
+import com.helloworld.sections.designmodel.observer.WeiXinUser;
 import com.helloworld.sections.designmodel.sample.ZhangSanfeng;
 import com.helloworld.sections.designmodel.shareone.GoodFactory;
 import com.helloworld.sections.designmodel.shareone.Goods;
@@ -139,6 +141,14 @@ public class DesignModelActivity extends AppCompatActivity {
 
     public void observerAction(View view) {
 
+        SubscriptionSubject subject = new SubscriptionSubject();
+
+        WeiXinUser weiXinUser = new WeiXinUser("打的费");
+        WeiXinUser weiXinUser2 = new WeiXinUser("复工后的");
+
+        subject.attach(weiXinUser);
+        subject.attach(weiXinUser2);
+        subject.notify("更新消息");
 
     }
 }
