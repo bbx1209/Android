@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.helloworld.R;
+import com.helloworld.sections.designmodel.builder.Director;
+import com.helloworld.sections.designmodel.builder.ProductBuilder;
 import com.helloworld.sections.designmodel.factory.GDComputerFactory;
 import com.helloworld.sections.designmodel.factory.HpComputer;
 
@@ -45,4 +47,11 @@ public class DesignModelActivity extends AppCompatActivity {
         }
     }
 
+    public void createBuilder(View view) {
+
+        ProductBuilder builder = new ProductBuilder();
+        Director director = new Director(builder);
+        director.createProduct("core i7", "4G");
+
+    }
 }
