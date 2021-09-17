@@ -1,0 +1,13 @@
+
+1. entity
+a) 需要设置 tableName
+b) PrimaryKey  必须指定, 否则编译失败
+
+2. dao
+a) dao 是一个 interface 类, 仅定义接口
+
+3. database
+a)entities 指定模型类, version 版本号
+b) 必须继承自 RoomDatabase
+c) 没有特殊处理可 将 自定义 database 定义为 abstract
+d) database 单例要用 Room.databaseBuilder().builder() 初始化

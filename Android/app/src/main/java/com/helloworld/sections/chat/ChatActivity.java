@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.helloworld.R;
@@ -11,7 +12,7 @@ import com.helloworld.sections.chat.model.MsgModel;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.UUID;
 
 
 public class ChatActivity extends AppCompatActivity {

@@ -3,9 +3,11 @@ package com.helloworld.sections.chat.model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.helloworld.sections.chat.dbhelper.TableName;
+
 import java.util.UUID;
 
-@Entity
+@Entity(tableName = TableName.TRABLENAME_MESSAGE)
 public class MsgModel {
     @PrimaryKey(autoGenerate = true)
     private  int id;
