@@ -55,8 +55,9 @@ public class AlbumAdapter extends RecyclerView.Adapter {
 
         if (holder instanceof  ViewHolder) {
             ViewHolder viewHolder = (ViewHolder) holder;
-            Bitmap bitmap = BitmapFactory.decodeFile(bean.path);
+//            Bitmap bitmap = BitmapFactory.decodeFile(bean.path); //耗时方法,放异步线程处理
 //            viewHolder.imageView.setImageBitmap(bitmap);
+            //glide 会异步加载图片
             Glide.with(holder.itemView).load(new File(bean.path)).into(viewHolder.imageView);
         }
 

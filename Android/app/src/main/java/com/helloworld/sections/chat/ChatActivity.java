@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.helloworld.R;
+import com.helloworld.sections.chat.model.MsgModel;
 
 import java.util.ArrayList;
 import java.util.List;
