@@ -23,6 +23,7 @@ public class ChatActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private LinearLayout inputbarlayout;
     private boolean inputbarIsUnFold = false;
+    private LinearLayout moreitemLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,8 @@ public class ChatActivity extends AppCompatActivity {
         recyclerView.setAdapter(chatRecyclerViewAdapter);
 
         inputbarlayout = findViewById(R.id.inputBarFrame);
+
+        moreitemLayout = findViewById(R.id.moreItemView);
     }
 
     List<MsgModel> queryData() {
@@ -58,7 +61,7 @@ public class ChatActivity extends AppCompatActivity {
 
         if (inputbarIsUnFold) {
             //展开状态
-            margin_bottom = 500;
+            margin_bottom = 550;
 
         } else {
             //闭合状态
