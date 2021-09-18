@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.helloworld.Handler.DimenUtils;
 import com.helloworld.R;
 import com.helloworld.sections.chat.model.MsgModel;
 
@@ -61,9 +62,7 @@ public class ChatActivity extends AppCompatActivity {
 
         if (inputbarIsUnFold) {
             //展开状态
-            margin_bottom = 250;
-
-
+            margin_bottom = DimenUtils.dp2px(this, 250);
 
         } else {
             //闭合状态
@@ -73,7 +72,6 @@ public class ChatActivity extends AppCompatActivity {
         ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) inputbarlayout.getLayoutParams();
         layoutParams.bottomMargin = margin_bottom;
         inputbarlayout.setLayoutParams(layoutParams);
-
 
     }
 }
