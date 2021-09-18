@@ -61,7 +61,9 @@ public class ChatActivity extends AppCompatActivity {
 
         if (inputbarIsUnFold) {
             //展开状态
-            margin_bottom = 550;
+            margin_bottom = 250;
+
+
 
         } else {
             //闭合状态
@@ -71,6 +73,7 @@ public class ChatActivity extends AppCompatActivity {
         ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) inputbarlayout.getLayoutParams();
         layoutParams.bottomMargin = margin_bottom;
         inputbarlayout.setLayoutParams(layoutParams);
+
 
     }
 }
