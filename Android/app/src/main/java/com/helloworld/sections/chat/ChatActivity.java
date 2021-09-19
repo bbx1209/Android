@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 
 import com.helloworld.Handler.DimenUtils;
 import com.helloworld.R;
+import com.helloworld.sections.chat.dbhelper.MsgDBHelper;
 import com.helloworld.sections.chat.model.MsgModel;
 
 import java.util.ArrayList;
@@ -25,6 +26,8 @@ public class ChatActivity extends AppCompatActivity {
     private LinearLayout inputbarlayout;
     private boolean inputbarIsUnFold = false;
     private LinearLayout moreitemLayout;
+
+    private MsgDBHelper mMsgDBHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,9 @@ public class ChatActivity extends AppCompatActivity {
         inputbarlayout = findViewById(R.id.inputBarFrame);
 
         moreitemLayout = findViewById(R.id.moreItemView);
+
+        mMsgDBHelper = new MsgDBHelper(this);
+
     }
 
     List<MsgModel> queryData() {
