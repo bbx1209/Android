@@ -20,9 +20,9 @@ public interface MsgModelDao {
     @Update
     void updateMsgs(MsgModel... models);
     @Delete
-    boolean deleteMsgs(MsgModel ... models);
-    @Delete
-    boolean deleteAllMsgs();
+    int deleteMsgs(MsgModel ... models);
+    @Query("delete from message")
+    void deleteAllMsgs();
     @Query("select * from message")
     List<MsgModel> queryAllMsgmodels();
 

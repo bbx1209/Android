@@ -1,5 +1,7 @@
 package com.helloworld.sections.chat.dbhelper;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.DatabaseConfiguration;
@@ -17,6 +19,8 @@ import com.helloworld.sections.database.room.Book_roomDatabase;
 @Database(entities = {MsgModel.class}, version = 1, exportSchema = false)
 public abstract class MsgModelDatabase extends RoomDatabase {
 
+    public abstract  MsgModelDao getMsgModelDao();
+
     public static  MsgModelDatabase instance = null;
     public  static  synchronized  MsgModelDatabase getInstance() {
         if (instance == null) {
@@ -26,6 +30,5 @@ public abstract class MsgModelDatabase extends RoomDatabase {
         }
         return instance;
     }
-
 
 }

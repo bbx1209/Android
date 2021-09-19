@@ -11,7 +11,7 @@ import java.util.UUID;
 public class MsgModel {
     @PrimaryKey(autoGenerate = true)
     private  int id;
-    public final String msgId;
+    public  String msgId;
     public String msgContent;
     public int msgType;
     public int sendType;
