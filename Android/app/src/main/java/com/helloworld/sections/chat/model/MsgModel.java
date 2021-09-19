@@ -25,6 +25,7 @@ public class MsgModel {
         this.sendType = sendType;
         this.msgId = UUID.randomUUID().toString();
         this.msgDate = new Date();
+        this.sendState = SendState.SENDSTATE_SUCCESS;
     }
 
     public int getId() {

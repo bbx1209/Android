@@ -3,17 +3,21 @@ package com.helloworld.sections.chat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.util.StringUtil;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.helloworld.Handler.DimenUtils;
 import com.helloworld.R;
 import com.helloworld.sections.chat.dbhelper.MsgDBHelper;
 import com.helloworld.sections.chat.model.MsgModel;
+import com.helloworld.sections.chat.model.MsgType;
+import com.helloworld.sections.chat.model.SendType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +30,7 @@ public class ChatActivity extends AppCompatActivity {
     private LinearLayout inputbarlayout;
     private boolean inputbarIsUnFold = false;
     private LinearLayout moreitemLayout;
+    private EditText mInputText;
 
     private MsgDBHelper mMsgDBHelper;
 
@@ -46,6 +51,8 @@ public class ChatActivity extends AppCompatActivity {
 
         moreitemLayout = findViewById(R.id.moreItemView);
 
+        mInputText = findViewById(R.id.inputEditTextView);
+
         mMsgDBHelper = new MsgDBHelper(this);
 
     }
@@ -55,9 +62,16 @@ public class ChatActivity extends AppCompatActivity {
         return new ArrayList<>();
     }
 
+    //发送消息
     public void sendMsg(View view) {
+        String inputText = mInputText.getText().toString();
+        if (inputText != null && !inputText.equals("")) {
 
-
+            MsgModel msgModel = new MsgModel(inputText, MsgType.MSGTYPE_TEXT, SendType.SENDTYPE_SEND);
+            mMsgDBHelper.insertMsgModel(msgModel);
+            //清空 输入框
+            mInputText.setText(null);
+        }
     }
 
     // 点击 + 号
