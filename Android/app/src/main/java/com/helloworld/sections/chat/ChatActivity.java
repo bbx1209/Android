@@ -63,10 +63,12 @@ public class ChatActivity extends AppCompatActivity {
         if (inputbarIsUnFold) {
             //展开状态
             margin_bottom = DimenUtils.dp2px(this, 250);
+            moreitemLayout.setVisibility(ViewGroup.VISIBLE);
 
         } else {
             //闭合状态
             margin_bottom = 0;
+            moreitemLayout.setVisibility(ViewGroup.GONE);
         }
         // input bar 的父布局
         ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) inputbarlayout.getLayoutParams();
