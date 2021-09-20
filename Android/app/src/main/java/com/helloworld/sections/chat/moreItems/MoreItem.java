@@ -1,12 +1,14 @@
 package com.helloworld.sections.chat.moreItems;
 
+import android.graphics.drawable.Drawable;
+
 public class MoreItem {
 
     public  String title;
-    public  int imageDrable;
+    public Drawable imageDrable;
     public  MoreItemListener listener;
 
-    public MoreItem(String title, int imageDrable, MoreItemListener listener) {
+    public MoreItem(String title, Drawable imageDrable, MoreItemListener listener) {
         this.title = title;
         this.imageDrable = imageDrable;
         this.listener = listener;
@@ -20,11 +22,11 @@ public class MoreItem {
         this.title = title;
     }
 
-    public int getImageDrable() {
+    public Drawable getImageDrable() {
         return imageDrable;
     }
 
-    public void setImageDrable(int imageDrable) {
+    public void setImageDrable(Drawable imageDrable) {
         this.imageDrable = imageDrable;
     }
 
