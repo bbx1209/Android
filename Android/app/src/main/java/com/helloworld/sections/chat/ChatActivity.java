@@ -30,6 +30,7 @@ public class ChatActivity extends AppCompatActivity {
     private LinearLayout inputbarlayout;
     private boolean inputbarIsUnFold = false;
     private LinearLayout moreitemLayout;
+    private  RecyclerView moreitemView;
     private EditText mInputText;
 
     private MsgDBHelper mMsgDBHelper;
@@ -49,7 +50,8 @@ public class ChatActivity extends AppCompatActivity {
 
         inputbarlayout = findViewById(R.id.inputBarFrame);
 
-        moreitemLayout = findViewById(R.id.moreItemView);
+        moreitemLayout = findViewById(R.id.moreItemView_layout);
+        moreitemView = findViewById(R.id.moreItemView);
 
         mInputText = findViewById(R.id.inputEditTextView);
 
