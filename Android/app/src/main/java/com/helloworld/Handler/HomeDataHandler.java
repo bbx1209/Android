@@ -42,6 +42,9 @@ public class HomeDataHandler {
 
     public List<ActivityModel> homeList() {
 
+
+        addItemToList(ChatActivity.class, "聊天页面", null);
+
         addItemToList(DesignModelActivity.class, "设计模式", null);
 
         addItemToList(AlbumActivity.class, "相册", null);
@@ -60,9 +63,6 @@ public class HomeDataHandler {
         addItemToList(ThreadActivity.class, "多线程", null);
         addItemToList(ServiceActivity.class, "服务Service", null);
         addItemToList(WebViewActivity.class, "webView", null);
-
-        addItemToList(ChatActivity.class, "聊天页面", null);
-
         addItemToList(Notifaction.class, "通知", null);
 
         addItemToList(ListViewActivity.class, "列表页", null);

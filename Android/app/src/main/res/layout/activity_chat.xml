@@ -10,19 +10,19 @@
         android:id="@+id/chatRecuclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@color/gray"
         app:layout_constraintBottom_toTopOf="@+id/inputBarFrame"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_weight="1"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
 
     <LinearLayout
         android:id="@+id/inputBarFrame"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@color/cardview_shadow_end_color"
+        android:background="@color/cyan"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
@@ -33,20 +33,40 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:hint="@string/inputHint"
-            />
+            android:hint="@string/inputHint" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:onClick="moreItemsClick"
+            android:src="@drawable/add" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="send"
-            android:textAllCaps="true"
+            android:layout_marginLeft="3dp"
             android:onClick="sendMsg"
-            />
-
+            android:text="send"
+            android:textAllCaps="true" />
 
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/moreItemView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/blue"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+
+    </LinearLayout>
+
 
 
 
