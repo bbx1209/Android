@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MoreItemAdapter extends RecyclerView.Adapter <MoreItemAdapter.MoreItemViewHolder> {
 
-        private Context mContext;
+        private final Context mContext;
         private List<MoreItem> mItems = new ArrayList<>();
 
     public MoreItemAdapter(Context mContext, List<MoreItem> mItems) {
@@ -32,13 +32,25 @@ public class MoreItemAdapter extends RecyclerView.Adapter <MoreItemAdapter.MoreI
 
         View itemView = LayoutInflater.from(mContext).inflate(R.layout.chat_more_item, parent, false);
         MoreItemViewHolder moreItemViewHolder = new MoreItemViewHolder(itemView);
+
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (parent instanceof RecyclerView) {
+                    RecyclerView recy = (RecyclerView) parent;
+                    int position = recy.getChildAdapterPosition(itemView);
+                    MoreItem model = mItems.get(position);
+                    model.listener.onClickMoreItem(model);
+                }
+            }
+        });
         return moreItemViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MoreItemViewHolder holder, int position) {
         MoreItem item = mItems.get(position);
-        holder.mImageView.setImageDrawable(item.imageDrable);
+        holder.mImageView.setImageResource(item.imageDrable);
         holder.mTextView.setText(item.title);
     }
 
@@ -47,10 +59,10 @@ public class MoreItemAdapter extends RecyclerView.Adapter <MoreItemAdapter.MoreI
         return mItems.size();
     }
 
-    public class MoreItemViewHolder extends RecyclerView.ViewHolder {
+    public static class MoreItemViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView mImageView;
-        private TextView mTextView;
+        private final ImageView mImageView;
+        private final   TextView mTextView;
         public MoreItemViewHolder(@NonNull View itemView) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.item_imageview);

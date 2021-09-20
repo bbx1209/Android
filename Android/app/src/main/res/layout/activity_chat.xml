@@ -67,7 +67,10 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/moreItemView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:scrollbarAlwaysDrawVerticalTrack="false"
+            />
 
 
     </LinearLayout>
