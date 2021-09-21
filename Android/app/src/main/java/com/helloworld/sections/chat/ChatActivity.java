@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.helloworld.Handler.DimenUtils;
 import com.helloworld.R;
@@ -34,7 +35,7 @@ import java.util.List;
 import java.util.UUID;
 
 
-public class ChatActivity extends AppCompatActivity implements MoreItemListener , TextWatcher {
+public class ChatActivity extends AppCompatActivity implements MoreItemListener, TextWatcher, TextView.OnEditorActionListener, View.OnKeyListener {
 
     private static final String TAG = "ChatActivity";
 
@@ -79,6 +80,9 @@ public class ChatActivity extends AppCompatActivity implements MoreItemListener 
         //输入框 edit view
         mInputText = findViewById(R.id.inputEditTextView);
         mInputText.addTextChangedListener(this);
+        //监听键盘
+        mInputText.setOnKeyListener(this);
+        mInputText.setOnEditorActionListener(this);
 
         // 数据库助手
         mMsgDBHelper = new MsgDBHelper(this);
@@ -151,16 +155,37 @@ public class ChatActivity extends AppCompatActivity implements MoreItemListener 
 
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-        Log.d(TAG, "beforeTextChanged: ");
+        Log.d(TAG, "beforeTextChanged: " + "s：" + s);
     }
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-        Log.d(TAG, "onTextChanged: ");
+        Log.d(TAG, "onTextChanged: "+ "s：" + s);
     }
 
     @Override
+
     public void afterTextChanged(Editable s) {
-        Log.d(TAG, "afterTextChanged: ");
+        Log.d(TAG, "afterTextChanged: "+ "s：" + s);
+    }
+
+    @Override
+    public boolean onKey(View v, int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_UP) {
+            sendMsg(null);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+        return true;
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
