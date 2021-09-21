@@ -8,7 +8,11 @@ import androidx.room.util.StringUtil;
 
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.text.method.KeyListener;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -30,18 +34,20 @@ import java.util.List;
 import java.util.UUID;
 
 
-public class ChatActivity extends AppCompatActivity implements MoreItemListener {
+public class ChatActivity extends AppCompatActivity implements MoreItemListener , TextWatcher {
+
+    private static final String TAG = "ChatActivity";
 
     private RecyclerView recyclerView;
     private LinearLayout inputbarlayout;
     private boolean inputbarIsUnFold = false;
     private LinearLayout moreitemLayout;
-    private  RecyclerView moreitemView;
+    private RecyclerView moreitemView;
     private EditText mInputText;
 
     private MsgDBHelper mMsgDBHelper;
 
-    private List<MoreItem> mItemsList = new ArrayList<>();
+    private final List<MoreItem> mItemsList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,19 +56,19 @@ public class ChatActivity extends AppCompatActivity implements MoreItemListener 
 
         //初始化数据
         initMoreitems();
-
+        //聊天view
         recyclerView = findViewById(R.id.chatRecuclerView);
 
         List<MsgModel> msgModels = queryData();
 
         ChatRecyclerViewAdapter chatRecyclerViewAdapter = new ChatRecyclerViewAdapter(this, msgModels);
         recyclerView.setAdapter(chatRecyclerViewAdapter);
-
+        //输入框布局
         inputbarlayout = findViewById(R.id.inputBarFrame);
-
+        //更多按钮的布局
         moreitemLayout = findViewById(R.id.moreItemView_layout);
 
-
+        //更多按钮的view
         moreitemView = findViewById(R.id.moreItemView);
         MoreItemAdapter moreItemAdapter = new MoreItemAdapter(this, mItemsList);
         moreitemView.setAdapter(moreItemAdapter);
@@ -70,12 +76,12 @@ public class ChatActivity extends AppCompatActivity implements MoreItemListener 
         itemLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
         moreitemView.setLayoutManager(itemLayoutManager);
 
-
+        //输入框 edit view
         mInputText = findViewById(R.id.inputEditTextView);
+        mInputText.addTextChangedListener(this);
 
+        // 数据库助手
         mMsgDBHelper = new MsgDBHelper(this);
-
-
 
 
     }
@@ -116,10 +122,7 @@ public class ChatActivity extends AppCompatActivity implements MoreItemListener 
             //展开状态
             margin_bottom = DimenUtils.dp2px(this, 250);
             moreitemLayout.setVisibility(ViewGroup.VISIBLE);
-
         } else {
-            //闭合状态
-            margin_bottom = 0;
             moreitemLayout.setVisibility(ViewGroup.GONE);
         }
         // input bar 的父布局
@@ -130,17 +133,34 @@ public class ChatActivity extends AppCompatActivity implements MoreItemListener 
     }
 
 
-//MARK: more item onclick
+    //MARK: more item onclick
     @Override
     public void onClickMoreItem(MoreItem moreItem) {
         switch (moreItem.type) {
-            case  MoreItemType.MOREITEMTYPE_CAMERA:
+            case MoreItemType.MOREITEMTYPE_CAMERA:
                 break;
-            case  MoreItemType.MOREITEMTYPE_ALBUM:
+            case MoreItemType.MOREITEMTYPE_ALBUM:
                 break;
-            case  MoreItemType.MOREITEMTYPE_VIDEO:
+            case MoreItemType.MOREITEMTYPE_VIDEO:
                 break;
             default:
         }
+    }
+
+    //MARK: ---- text whatch  ---------
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        Log.d(TAG, "beforeTextChanged: ");
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+        Log.d(TAG, "onTextChanged: ");
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+        Log.d(TAG, "afterTextChanged: ");
     }
 }
