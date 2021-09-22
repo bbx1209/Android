@@ -87,7 +87,7 @@ public class ChatActivity extends AppCompatActivity implements MoreItemListener,
 
         // 数据库助手
         mMsgDBHelper = new MsgDBHelper(this, this);
-
+        mMsgDBHelper.queryMsgHistory();
 
     }
 
@@ -193,6 +193,6 @@ public class ChatActivity extends AppCompatActivity implements MoreItemListener,
     //查询历史消息回调
     @Override
     public void getMsgHistory(List<MsgModel> msgs) {
-
+        Log.d(TAG, "getMsgHistory: ");
     }
 }
