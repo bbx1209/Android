@@ -9,16 +9,21 @@ public class MsgDBHelper {
 
     private MsgModelDao mDao;
     private Context mContext;
+    private MsgDBHelperListner mDBListner;
 
-    public MsgDBHelper(Context mContext) {
+    public MsgDBHelper(Context mContext , MsgDBHelperListner listner) {
         MsgModelDatabase modelDatabase = MsgModelDatabase.getInstance();
         this.mDao = modelDatabase.getMsgModelDao();
         this.mContext = mContext;
+        this.mDBListner = listner;
     }
 
     public void insertMsgModel(MsgModel msgModel) {
         new InsertAsyncTask(mDao).execute(msgModel);
     }
+
+
+
 
 
 
