@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.helloworld.Handler.DimenUtils;
 import com.helloworld.R;
 import com.helloworld.sections.chat.dbhelper.MsgDBHelper;
+import com.helloworld.sections.chat.dbhelper.MsgDBHelperListner;
 import com.helloworld.sections.chat.model.MsgModel;
 import com.helloworld.sections.chat.model.MsgType;
 import com.helloworld.sections.chat.model.SendType;
@@ -35,7 +36,7 @@ import java.util.List;
 import java.util.UUID;
 
 
-public class ChatActivity extends AppCompatActivity implements MoreItemListener, TextWatcher, TextView.OnEditorActionListener, View.OnKeyListener {
+public class ChatActivity extends AppCompatActivity implements MoreItemListener, TextWatcher, TextView.OnEditorActionListener, View.OnKeyListener, MsgDBHelperListner {
 
     private static final String TAG = "ChatActivity";
 
@@ -85,8 +86,8 @@ public class ChatActivity extends AppCompatActivity implements MoreItemListener,
         mInputText.setOnEditorActionListener(this);
 
         // 数据库助手
-        mMsgDBHelper = new MsgDBHelper(this);
-
+        mMsgDBHelper = new MsgDBHelper(this, this);
+        mMsgDBHelper.queryMsgHistory();
 
     }
 
@@ -187,5 +188,11 @@ public class ChatActivity extends AppCompatActivity implements MoreItemListener,
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    //查询历史消息回调
+    @Override
+    public void getMsgHistory(List<MsgModel> msgs) {
+        Log.d(TAG, "getMsgHistory: ");
     }
 }
