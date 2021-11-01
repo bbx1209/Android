@@ -3,8 +3,12 @@ package com.helloworld.sections.bluetooth;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.collection.ArraySet;
 
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
@@ -13,10 +17,30 @@ import android.view.View;
 
 import com.helloworld.R;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 public class BluetoothActivity extends AppCompatActivity {
 
     private static final String TAG = "Bluetooth activity";
     private BluetoothAdapter mDefaultAdapter;
+    private List<String> mArrayAdapter = new ArrayList();
+    // 创建一个接受 ACTION_FOUND 的 BroadcastReceiver
+    private final BroadcastReceiver mReceiver = new BroadcastReceiver(){
+
+        public void onReceive(Context context, Intent intent){
+            String action = intent.getAction();
+            // 当 Discovery 发现了一个设备
+            if(BluetoothDevice.ACTION_FOUND.equals(action)){
+                // 从 Intent 中获取发现的 BluetoothDevice
+                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                // 将名字和地址放入要显示的适配器中
+                mArrayAdapter.add(device.getName() + "\n" + device.getAddress());
+                Log.e(TAG, "BroadcastReceiver: "+ device.getName());
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +54,11 @@ public class BluetoothActivity extends AppCompatActivity {
         BluetoothStateListener stateListener = new BluetoothStateListener();
         IntentFilter intentFilter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
         registerReceiver(stateListener, intentFilter);
+
+        // 注册这个 BroadcastReceiver
+        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+        registerReceiver(mReceiver,filter);
+
 
     }
 
@@ -48,6 +77,20 @@ public class BluetoothActivity extends AppCompatActivity {
 
     //搜索设备
     public void findDevice(View view) {
+        Set<BluetoothDevice> pairedDevices = mDefaultAdapter.getBondedDevices();
+
+        if(pairedDevices.size() > 0){
+            for(BluetoothDevice device:pairedDevices){
+                // 把名字和地址取出来添加到适配器中
+                if (device != null) {
+                    mArrayAdapter.add(device.getName()+"\n"+ device.getAddress());
+                    Log.e(TAG, "findDevice: "+ device.getName());
+                }
+            }
+        }
+
+
+        mDefaultAdapter.startDiscovery();
 
     }
 
@@ -63,5 +106,12 @@ public class BluetoothActivity extends AppCompatActivity {
             default:
                 break;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mReceiver);
+        mDefaultAdapter.cancelDiscovery();
     }
 }
