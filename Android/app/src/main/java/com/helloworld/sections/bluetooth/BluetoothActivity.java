@@ -7,6 +7,7 @@ import androidx.collection.ArraySet;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.KeyEventDispatcher;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
@@ -44,7 +45,11 @@ public class BluetoothActivity extends AppCompatActivity {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 // 将名字和地址放入要显示的适配器中
                 mArrayAdapter.add(device.getName() + "\n" + device.getAddress());
-                Log.e(TAG, "BroadcastReceiver: " + device.getName());
+                Log.e(TAG, "BroadcastReceiver: " + device.getName() + device.getAddress());
+//                mDevices.add(device);
+                DeviceRCViewAdapter adapter = (DeviceRCViewAdapter) mRecyclerView.getAdapter();
+                adapter.addDevice(device);
+
             }
         }
     };
@@ -59,6 +64,7 @@ public class BluetoothActivity extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.deviceRCView);
         DeviceRCViewAdapter viewAdapter = new DeviceRCViewAdapter(this, mDevices);
         mRecyclerView.setAdapter(viewAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         //申请权限
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH) != PackageManager.PERMISSION_GRANTED) {
@@ -114,8 +120,11 @@ public class BluetoothActivity extends AppCompatActivity {
                 if (device != null) {
                     mArrayAdapter.add(device.getName() + "\n" + device.getAddress());
                     Log.e(TAG, "findDevice: " + device.getName());
+//                    mDevices.add(device);
+                    ((DeviceRCViewAdapter)mRecyclerView.getAdapter()).addDevice(device);
                 }
             }
+
         }
 
 
