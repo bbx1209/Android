@@ -6,4 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".sections.bluetooth.BluetoothActivity">
 
+    <Button
+        android:id="@+id/openBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:onClick="openBT"
+        android:text="open  BT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/findDevice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="findDevice"
+        android:text="FindDevice"
+        app:layout_constraintEnd_toEndOf="@+id/openBT"
+        app:layout_constraintStart_toStartOf="@+id/openBT"
+        app:layout_constraintTop_toBottomOf="@+id/openBT" />
 </androidx.constraintlayout.widget.ConstraintLayout>
