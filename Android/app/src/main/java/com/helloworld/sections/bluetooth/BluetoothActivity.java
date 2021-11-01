@@ -4,13 +4,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.collection.ArraySet;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.KeyEventDispatcher;
 
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,17 +32,17 @@ public class BluetoothActivity extends AppCompatActivity {
     private BluetoothAdapter mDefaultAdapter;
     private List<String> mArrayAdapter = new ArrayList();
     // 创建一个接受 ACTION_FOUND 的 BroadcastReceiver
-    private final BroadcastReceiver mReceiver = new BroadcastReceiver(){
+    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
 
-        public void onReceive(Context context, Intent intent){
+        public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             // 当 Discovery 发现了一个设备
-            if(BluetoothDevice.ACTION_FOUND.equals(action)){
+            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                 // 从 Intent 中获取发现的 BluetoothDevice
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 // 将名字和地址放入要显示的适配器中
                 mArrayAdapter.add(device.getName() + "\n" + device.getAddress());
-                Log.e(TAG, "BroadcastReceiver: "+ device.getName());
+                Log.e(TAG, "BroadcastReceiver: " + device.getName());
             }
         }
     };
@@ -46,6 +51,18 @@ public class BluetoothActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bluetooth);
+
+        //申请权限
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.BLUETOOTH}, 1);
+        }
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_ADMIN) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.BLUETOOTH_ADMIN}, 2);
+        }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 3);
+        }
 
         mDefaultAdapter = BluetoothAdapter.getDefaultAdapter();
         if (mDefaultAdapter != null) {
@@ -57,7 +74,11 @@ public class BluetoothActivity extends AppCompatActivity {
 
         // 注册这个 BroadcastReceiver
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-        registerReceiver(mReceiver,filter);
+        IntentFilter filter_start = new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_STARTED);
+        IntentFilter filter_finish = new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
+        registerReceiver(mReceiver, filter);
+        registerReceiver(mReceiver, filter_start);
+        registerReceiver(mReceiver, filter_finish);
 
 
     }
@@ -79,21 +100,21 @@ public class BluetoothActivity extends AppCompatActivity {
     public void findDevice(View view) {
         Set<BluetoothDevice> pairedDevices = mDefaultAdapter.getBondedDevices();
 
-        if(pairedDevices.size() > 0){
-            for(BluetoothDevice device:pairedDevices){
+        if (pairedDevices.size() > 0) {
+            for (BluetoothDevice device : pairedDevices) {
                 // 把名字和地址取出来添加到适配器中
                 if (device != null) {
-                    mArrayAdapter.add(device.getName()+"\n"+ device.getAddress());
-                    Log.e(TAG, "findDevice: "+ device.getName());
+                    mArrayAdapter.add(device.getName() + "\n" + device.getAddress());
+                    Log.e(TAG, "findDevice: " + device.getName());
                 }
             }
         }
 
 
-        mDefaultAdapter.startDiscovery();
+        boolean result = mDefaultAdapter.startDiscovery();
+        Log.e(TAG, "findDevice: " + result);
 
     }
-
 
 
     @Override
@@ -101,9 +122,25 @@ public class BluetoothActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case 100:
-                Log.e(TAG, "onRequestPermissionsResult: "+ "蓝牙开启" );
+                Log.e(TAG, "onRequestPermissionsResult: " + "蓝牙开启");
                 break;
             default:
+                break;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case 1:
+                Log.e(TAG, "onRequestPermissionsResult: bluetooth");
+                break;
+            case 2:
+                Log.e(TAG, "onRequestPermissionsResult: bluetooth admin ");
+                break;
+            case 3:
+                Log.e(TAG, "onRequestPermissionsResult: find location");
                 break;
         }
     }
