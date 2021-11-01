@@ -7,6 +7,7 @@ import androidx.collection.ArraySet;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.KeyEventDispatcher;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
@@ -31,6 +32,7 @@ public class BluetoothActivity extends AppCompatActivity {
     private static final String TAG = "Bluetooth activity";
     private BluetoothAdapter mDefaultAdapter;
     private List<String> mArrayAdapter = new ArrayList();
+    private List<BluetoothDevice> mDevices = new ArrayList();
     // 创建一个接受 ACTION_FOUND 的 BroadcastReceiver
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
 
@@ -47,10 +49,16 @@ public class BluetoothActivity extends AppCompatActivity {
         }
     };
 
+    private RecyclerView mRecyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bluetooth);
+
+        mRecyclerView = findViewById(R.id.deviceRCView);
+        DeviceRCViewAdapter viewAdapter = new DeviceRCViewAdapter(this, mDevices);
+        mRecyclerView.setAdapter(viewAdapter);
 
         //申请权限
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH) != PackageManager.PERMISSION_GRANTED) {
