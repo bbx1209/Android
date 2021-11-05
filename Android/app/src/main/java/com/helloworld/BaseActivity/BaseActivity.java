@@ -25,8 +25,8 @@ public class BaseActivity extends AppCompatActivity {
 
         MyAcitivityManager.pushActivity(this);
 
-        getPathByEnviroment();
-        getPathByContext();
+//        getPathByEnviroment();
+//        getPathByContext();
 
     }
 
